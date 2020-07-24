@@ -1,0 +1,6 @@
+.cover {
+  background-image: url(/em-chris-spain.jpg);
+  background-size: cover;
+  height: 100%;
+  background-position: center;
+}

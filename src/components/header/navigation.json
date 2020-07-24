@@ -1,0 +1,26 @@
+[
+  {
+    "label": "Ceremony",
+    "href": "/ceremoy"
+  },
+  {
+    "label": "Reception",
+    "href": "/reception"
+  },
+  {
+    "label": "About",
+    "href": "/about"
+  },
+  {
+    "label": "Accommodation",
+    "href": "/accommodation"
+  },
+  {
+    "label": "Registry",
+    "href": "/registry"
+  },
+  {
+    "label": "RSVP",
+    "href": "/rsvp"
+  }
+]
