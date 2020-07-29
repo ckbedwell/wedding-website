@@ -3,11 +3,24 @@ import classNames from 'classnames'
 
 import styles from './image.css'
 
-export const Image = ({ src, type }) => {
+export const Image = ({ ratio, src, type }) => {
+  const props = {
+    className: classNames(styles.image, {
+      [styles.cover]: type === `cover`,
+    }),
+  }
+
+  const imgJSX = (
+    <img
+      {...props}
+      src={src}
+    />
+  )
+  
   if (type === 'cover') {
     return (
       <div
-        className={classNames(styles.cover)}
+        {...props}
         style={{
           backgroundImage: `url(${src})`,
         }}
@@ -15,9 +28,20 @@ export const Image = ({ src, type }) => {
     )
   }
 
-  return (
-    <img
-      src={src}
-    />
-  )
+  if (ratio) {
+    const [width, height] = ratio
+
+    return (
+      <div
+        className={styles.ratio}
+        style={{
+          paddingTop: `${(height / width) * 100}%`,
+        }}
+      >
+        {imgJSX}
+      </div>
+    )
+  }
+
+  return imgJSX
 }

@@ -10,6 +10,7 @@ export const Navigation = ({ items }) => {
       {items.map(({ label, href }) => {
         return (
           <NavLink
+            className={styles.navLink}
             href={href}
             key={href}
           >

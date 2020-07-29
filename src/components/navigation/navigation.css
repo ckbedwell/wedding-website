@@ -1,5 +1,7 @@
 .container {
-  composes: primary from '~css/typography.css';
   display: flex;
-  color: white;
+
+  .navLink:not(:last-of-type) {
+    margin-right: 2rem;
+  }
 }

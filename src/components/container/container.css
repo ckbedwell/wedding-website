@@ -1,0 +1,29 @@
+.widthContain {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.padded {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.xs {
+  max-width: 600px;
+}
+
+.small {
+  max-width: 800px;
+}
+
+.medium {
+  max-width: 1200px;
+}
+
+.large {
+  max-width: 1440px;
+}
+
+.xl {
+  max-width: 1600px;
+}

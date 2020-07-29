@@ -1,9 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat');
+
+:global {
+  html {
+    font-size: 62.5%;
+  }
+
+  body {
+    font-size: 1.6rem;
+  }
+}
 
 :root {
-  --robotoSlab: 'Roboto Slab', serif;
+  --sans-serif: 'Montserrat', sans-serif;
+  --serif: 'Great Vibes', cursive;
 }
 
 .primary {
-  font-family: var(--robotoSlab);
+  font-family: var(--sans-serif);
+}
+
+.secondary {
+  font-family: var(--serif);
+  font-weight: 400;
 }

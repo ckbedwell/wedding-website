@@ -1,0 +1,7 @@
+.primary {
+  composes: primary from '~css/typography.css';
+}
+
+.secondary {
+  composes: secondary from '~css/typography.css';
+}

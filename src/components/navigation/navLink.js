@@ -1,10 +1,29 @@
 import React from 'react'
-import { Link } from 'components/link'
+import classNames from 'classnames'
 
-export const NavLink = ({ children, href }) => {
+import { Link } from 'components/link'
+import { Text } from 'components/text'
+
+import styles from './navLink.css'
+
+export const NavLink = ({
+  children,
+  className,
+  href,
+}) => {
   return (
-    <Link to={href}>
-      {children}
+    <Link
+      className={classNames(styles.container, {
+        [className]: className,
+      })}
+      to={href}
+    >
+      <Text
+        family="primary"
+        size={3}
+      >
+        {children}
+      </Text>
     </Link>
   )
 }

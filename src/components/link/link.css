@@ -1,0 +1,22 @@
+.link {
+  color: black;
+  position: relative;
+  text-decoration: none;
+
+  &:after {
+    background-color: currentColor;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 1px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    transition: 0.3s width;
+    width: 0;
+  }
+
+  &:hover:after {
+    width: 100%;
+  }
+}

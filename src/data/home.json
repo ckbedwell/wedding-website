@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "component": "group",
+      "items": [
+        {
+          "key": "intro",
+          "component": "text",
+          "content": {
+            "html": "The honor of your presence is requested at the marriage of"
+          },
+          "layout": {
+            "container": "xs"
+          },
+          "styling": {
+            "color": "white",
+            "family": "primary",
+            "size": 6,
+            "textAlign": "center"
+          }
+        }
+      ]
+    }
+  ]
+}

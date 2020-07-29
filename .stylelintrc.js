@@ -44,7 +44,9 @@ module.exports = {
     "selector-max-compound-selectors": 5,
     "selector-max-id": 0,
     "selector-max-universal": 1,
-    "selector-pseudo-class-no-unknown": true,
+    "selector-pseudo-class-no-unknown": [true, {
+      "ignorePseudoClasses": ["global"],
+    }],
     "selector-pseudo-element-no-unknown": true,
     "selector-type-no-unknown": true,
     "string-no-newline": true,
