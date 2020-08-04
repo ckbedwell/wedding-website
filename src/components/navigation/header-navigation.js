@@ -2,9 +2,9 @@ import React from 'react'
 
 import { NavLink } from './navLink'
 
-import styles from './navigation.css'
+import styles from './header-navigation.css'
 
-export const Navigation = ({ items }) => {
+export const HeaderNavigation = ({ items }) => {
   return (
     <div className={styles.container}>
       {items.map(({ label, href }) => {

@@ -1,0 +1,16 @@
+:global {
+  :root {
+    --pulloutWidth: 30vw;
+  }
+}
+
+.container {
+  background-color: white;
+  border-right: 1px solid black;
+  padding: 2rem;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: calc(var(--pulloutWidth) - (var(--pulloutWidth) * 2));
+  width: var(--pulloutWidth);
+}

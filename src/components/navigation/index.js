@@ -1,1 +1,2 @@
-export { Navigation } from './navigation'
+export { HeaderNavigation } from './header-navigation'
+export { PulloutNavigation } from './pullout-navigation'
