@@ -1,5 +1,2 @@
-function getIcons(r) {
-  r.keys().forEach(r)
-}
-
-getIcons(require.context('../icons', true, /\.svg$/))
+export { getIcons } from './get-icons'
+export { sentrySetup } from './sentry-setup'
