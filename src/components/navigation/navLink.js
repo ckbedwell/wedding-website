@@ -1,6 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { useDispatch } from 'react-redux'
+import { useLocation } from 'react-router-dom'
 
 import { closePullout } from 'store/pullout-slice'
 import { Link } from 'components/link'
@@ -13,12 +14,14 @@ export const NavLink = ({
   className,
   href,
 }) => {
+  const location = useLocation()
   const dispatch = useDispatch()
 
   return (
     <Link
       className={classNames(styles.container, {
         [className]: className,
+        [styles.active]: href === location.pathname,
       })}
       onClick={handleClick}
       to={href}

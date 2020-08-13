@@ -1,24 +1,24 @@
 import { useMediaQuery } from 'react-responsive'
+import mediaSizes from './mediaSizes.json'
 
 export const DESKTOP_KEY = `desktop`
 export const TABLET_KEY = `tablet`
 export const MOBILE_KEY = `mobile`
 
-const tabletSize = 992
-const mobileSize = 520
+const { mobile, tablet } = mediaSizes
 
 const mediaQueries = {
   desktop: {
-    min: tabletSize + 1,
+    min: tablet + 1,
     max: 9999,
   },
   tablet: {
-    min: mobileSize + 1,
-    max: tabletSize,
+    min: mobile + 1,
+    max: tablet,
   },
   mobile: {
     min: 1,
-    max: mobileSize,
+    max: mobile,
   },
 }
 

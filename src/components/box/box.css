@@ -1,0 +1,7 @@
+.flex {
+  display: flex;
+
+  > *:not(:last-child) {
+    margin-right: var(--gap);
+  }
+}

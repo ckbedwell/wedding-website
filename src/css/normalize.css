@@ -17,6 +17,7 @@
  */
 
 html {
+  background-color: rgb(253 253 253);
   line-height: 1.5; /* 1 */
   text-size-adjust: 100%; /* 2 */
   overflow-x: hidden;

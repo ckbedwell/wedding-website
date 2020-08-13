@@ -5,6 +5,7 @@ import styles from './container.css'
 
 export const Container = ({
   children,
+  className,
   container,
   padded,
   style,
@@ -12,6 +13,7 @@ export const Container = ({
   return (
     <div
       className={classNames({
+        [className]: className,
         [styles.padded]: padded,
         [styles.widthContain]: Boolean(container),
         [styles.xs]: container === `xs`,

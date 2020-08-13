@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat&family=Reenie+Beanie&display=swap');
 
 :global {
   html {
@@ -13,6 +13,7 @@
 :root {
   --sans-serif: 'Montserrat', sans-serif;
   --serif: 'Great Vibes', cursive;
+  --handWriting: 'Reenie Beanie', cursive;
 }
 
 .primary {
@@ -22,4 +23,8 @@
 .secondary {
   font-family: var(--serif);
   font-weight: 400;
+}
+
+.handWriting {
+  font-family: var(--handWriting);
 }

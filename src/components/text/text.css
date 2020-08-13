@@ -5,3 +5,7 @@
 .secondary {
   composes: secondary from '~css/typography.css';
 }
+
+.handWriting {
+  composes: handWriting from '~css/typography.css';
+}

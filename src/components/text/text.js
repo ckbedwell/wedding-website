@@ -7,7 +7,7 @@ export const Text = ({
   children,
   className,
   color,
-  factorial = 6,
+  factor = 6,
   family = `primary`,
   size,
   style = {},
@@ -23,10 +23,11 @@ export const Text = ({
         [className]: className,
         [styles.primary]: family === `primary`,
         [styles.secondary]: family === `secondary`,
+        [styles.handWriting]: family === `handwriting`,
       })}
       style={{
         color,
-        fontSize: `${(size * factorial) / 10}rem`,
+        fontSize: `${(size * factor) / 10}rem`,
         textAlign,
         ...style,
       }}
