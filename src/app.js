@@ -35,7 +35,7 @@ const App = () => {
             <Route
               component={Home}
               exact
-              path="/"
+              path={`/`}
             />
             {navigation.map(({ href }) => {
               return (

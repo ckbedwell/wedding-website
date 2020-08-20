@@ -1,21 +1,20 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
+import classNames from 'classnames'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { useDimensions } from 'utils/useDimensions'
 import { togglePullout } from 'store/pullout-slice'
 import { HeaderNavigation } from 'components/navigation'
 import { HeaderTitle } from 'components/header'
 import {
-  Responsive,
   Desktop,
-  TABLET_KEY,
-  MOBILE_KEY,
+  TabletMobile,
 } from 'components/responsive'
 
 import styles from './header.css'
 import navigation from 'data/navigation.json'
 
 export const Header = () => {
+  const open = useSelector(state => state.pullout.open)
   const dispatch = useDispatch()
   const navLength = navigation.length / 2
   const nav1 = navigation.slice(0, navLength)
@@ -26,15 +25,17 @@ export const Header = () => {
     <>
       <div style={{ height: dimensions.height }} />
       <div
-        className={styles.container}
+        className={classNames(styles.container, {
+          [styles.pulloutOpen]: open,
+        })}
         ref={ref}
       >
-        <Desktop deviceRange={[`desktop`, `tablet`]}>
+        <Desktop>
           <HeaderNavigation items={nav1} />
           <HeaderTitle />
           <HeaderNavigation items={nav2} />
         </Desktop>
-        <Responsive deviceRange={[TABLET_KEY, MOBILE_KEY]}>
+        <TabletMobile>
           <button
             className={styles.menuButton}
             onClick={handleClick}
@@ -42,7 +43,7 @@ export const Header = () => {
             {`Menu`}
           </button>
           <HeaderTitle />
-        </Responsive>
+        </TabletMobile>
       </div>
     </>
   )

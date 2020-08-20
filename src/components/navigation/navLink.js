@@ -1,4 +1,3 @@
-import React from 'react'
 import classNames from 'classnames'
 import { useDispatch } from 'react-redux'
 import { useLocation } from 'react-router-dom'
@@ -27,7 +26,7 @@ export const NavLink = ({
       to={href}
     >
       <Text
-        family="primary"
+        family={`primary`}
         size={3}
       >
         {children}

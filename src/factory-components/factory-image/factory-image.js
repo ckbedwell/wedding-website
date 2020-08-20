@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Image } from 'components/image'
 import { ComponentLayout } from 'components/component-layout'
 

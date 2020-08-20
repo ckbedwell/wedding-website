@@ -29,7 +29,7 @@ export const RSVP = () => {
 
   return (
     <div>
-      <Container container="large">
+      <Container container={`large`}>
         <pre>
           {JSON.stringify(rsvpState, null, 2)}
         </pre>
@@ -47,6 +47,7 @@ export const RSVP = () => {
             idx={idx}
             key={invitedGuest.name}
             onChange={handleChange}
+            single={rsvpState[docId].invited.length === 1}
           />
         )
       })

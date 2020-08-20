@@ -1,0 +1,14 @@
+.infoArrow {
+  z-index: 1;
+  display: flex;
+  width: 550px;
+  align-items: center;
+}
+
+.arrowWrapper {
+  transform: rotate(200deg);
+}
+
+.arrowNote {
+  transform: rotate(-14deg) translateY(-55%);
+}

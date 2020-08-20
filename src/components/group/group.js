@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { ComponentFactory } from 'components/component-factory'
 
 import styles from './group.css'

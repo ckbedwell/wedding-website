@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Manor House Hotel Alsager",
+    "image": {
+      "ratio": [1365, 1365],
+      "src": "manor-house-alsager.jpg"
+    },
+    "description": "Manor House Hotel is a 4 star hotel close to Stoke-on-Trent and Crewe and is set in countryside near the M6 motorway on the borders of Staffordshire and Cheshire. All bedrooms are recently refurbished and have Apple-device docking station, free Wi-Fi. The heated swimming pool and Sauna is free to use for residents. Wi-Fi is free throughout the hotel and we provide free on-site parking for up to 110 cars. Our restaurant Stables Bar and Grill is open for breakfast, lunch and dinner.",
+    "distanceFromChurch": "8.7 miles",
+    "distanceFromReception": "4.5 miles",
+    "telephone": "01270 884000",
+    "location": [
+      "Audley Rd",
+      "Alsager",
+      "Stoke-on-Trent",
+      "ST7 2QQ"
+    ]
+  }
+]

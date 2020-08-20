@@ -1,4 +1,3 @@
-import React from 'react'
 import classNames from 'classnames'
 
 import styles from './image.css'
@@ -32,13 +31,15 @@ export const Image = ({ ratio, src, type }) => {
     const [width, height] = ratio
 
     return (
-      <div
-        className={styles.ratio}
-        style={{
-          paddingTop: `${(height / width) * 100}%`,
-        }}
-      >
-        {imgJSX}
+      <div>
+        <div
+          className={styles.ratio}
+          style={{
+            paddingTop: `${(height / width) * 100}%`,
+          }}
+        >
+          {imgJSX}
+        </div>
       </div>
     )
   }

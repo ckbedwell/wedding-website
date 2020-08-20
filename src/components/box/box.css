@@ -1,7 +1,39 @@
-.flex {
-  display: flex;
+.box {
+  
+}
 
+.horizontal,
+.grow {
+  display: flex;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+
+  > *:not(:last-child) {
+    margin-bottom: var(--gap);
+  }
+}
+
+.flexInline {
+  display: inline-flex;
+}
+
+.horizontal,
+.grow,
+.flexInline {
   > *:not(:last-child) {
     margin-right: var(--gap);
   }
+}
+
+.grow {
+  > * {
+    flex: 1;
+  }
+}
+
+.relative {
+  position: relative;
 }

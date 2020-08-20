@@ -1,4 +1,4 @@
-import React from 'react'
+import classNames from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
 import { useSwipeable } from 'react-swipeable'
 
@@ -22,7 +22,9 @@ export const Pullout = () => {
 
   return (
     <div
-      className={styles.container}
+      className={classNames(styles.container, {
+        [styles.pulloutOpen]: open,
+      })}
       {...handlers}
     >
       {open && <Component />}
@@ -30,7 +32,6 @@ export const Pullout = () => {
   )
 
   function handleSwipe(swipeData) {
-    console.log(swipeData)
     if (swipeData.dir === `Left`) {
       dispatch(closePullout())
     }

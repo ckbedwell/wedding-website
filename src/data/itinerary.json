@@ -1,14 +1,23 @@
 [
   {
     "id": "ceremony",
-    "name": "Ceremony",
-    "arrive": "",
-    "start": ""
+    "arrive": "12:30",
+    "start": "13:00",
+    "location": [
+      "St Andrews C Of E Church",
+      "40 Pilkington Ave",
+      "Newcastle-under-Lyme",
+      "ST5 3RE"
+    ]
   },
   {
     "id": "reception",
-    "name": "Reception",
     "arrive": "",
-    "start": ""
+    "start": "15:00",
+    "location": [
+      "Chance Hall Ln",
+      "Congleton",
+      "CW12 4TL"
+    ]
   }
 ]

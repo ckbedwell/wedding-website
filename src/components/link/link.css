@@ -1,5 +1,4 @@
 .link {
-  color: black;
   position: relative;
   text-decoration: none;
 
@@ -19,4 +18,8 @@
   &:hover:after {
     width: 100%;
   }
+}
+
+.bodyLink {
+  color: red;
 }

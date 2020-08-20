@@ -1,47 +1,54 @@
-import React from 'react'
-
 import { Box } from 'components/box'
 import { Section } from 'components/section'
-import { Polaroid } from 'components/polaroid'
-import { Text } from 'components/text'
+import { Desktop, TabletMobile } from 'components/responsive'
+
+import { ReceptionText } from './content/reception-text'
+import { ReceptionPolaroid } from './content/reception-polaroid'
+import { BarnPolaroids } from './content/barn-polaroids'
 
 // import styles from './reception.css'
-// import data from 'data/about.json'
 
 export const Reception = () => {
-  // const {
-  //   items,
-  // } = data
-
   return (
-    <Section
-      style={{
-        backgroundColor: `rgb(255 246 234)`,
-      }}
-    >
-      <Box
-        flex
-        gap={6}
-      >
-        <Text
-          family={`secondary`}
-          size={10}
-          tag={`h1`}
-        >
-          {`Alcumlow Wedding Barn`}
-        </Text>
-        <Polaroid
-          image={{
-            ratio: [1400, 933],
-            src: `aclumlow-wedding-barn.jpg`,
-          }}
-          rotate={-2}
+    <>
+      <Desktop>
+        <Section
           style={{
-            width: `800px`,
+            backgroundColor: `rgb(255 246 234)`,
           }}
-          text={`Alcumlow Wedding Barn`}
-        />
-      </Box>
-    </Section>
+        >
+          <Box
+            flex={`grow`}
+            gap={6}
+          >
+            <ReceptionText />
+            <ReceptionPolaroid width={800} />
+          </Box>
+        </Section>
+        <Section>
+          <Box
+            flex={`grow`}
+            relative
+          >
+            <BarnPolaroids />
+          </Box>
+        </Section>
+      </Desktop>
+      <TabletMobile>
+        <Section
+          style={{
+            backgroundColor: `rgb(255 246 234)`,
+          }}
+        >
+          <Box marginBottom={6}>
+            <ReceptionPolaroid width={`100%`} />
+          </Box>
+          <ReceptionText />
+        </Section>
+        <Section>
+          <BarnPolaroids />
+        </Section>
+      </TabletMobile>
+    </>
   )
 }

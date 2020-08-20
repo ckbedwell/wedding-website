@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Container } from 'components/container'
 
 import styles from './section.css'
@@ -11,7 +9,7 @@ export const Section = ({ children, style }) => {
       style={style}
     >
       <Container
-        container="large"
+        container={`large`}
         padded
       >
         {children}

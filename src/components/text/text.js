@@ -1,4 +1,3 @@
-import React from 'react'
 import classNames from 'classnames'
 
 import styles from './text.css'
@@ -9,6 +8,8 @@ export const Text = ({
   color,
   factor = 6,
   family = `primary`,
+  fontWeight,
+  lineHeight,
   size,
   style = {},
   tag,
@@ -28,6 +29,8 @@ export const Text = ({
       style={{
         color,
         fontSize: `${(size * factor) / 10}rem`,
+        fontWeight,
+        lineHeight,
         textAlign,
         ...style,
       }}

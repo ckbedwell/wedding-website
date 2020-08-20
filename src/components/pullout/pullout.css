@@ -9,8 +9,14 @@
   border-right: 1px solid black;
   padding: 2rem;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: calc(var(--pulloutWidth) - (var(--pulloutWidth) * 2));
+  transition: 0.3s;
   width: var(--pulloutWidth);
+  z-index: 2;
+}
+
+.pulloutOpen {
+  left: 0;
 }

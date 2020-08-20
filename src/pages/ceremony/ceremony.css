@@ -1,32 +1,5 @@
-.polaroidWrapper {
-  position: relative;
-}
-
-.infoArrow {
+.desktopArrow {
   position: absolute;
-  top: -24rem;
-  right: 15%;
-  z-index: 1;
-  display: flex;
-  width: 400px;
-  align-items: center;
-}
-
-.arrowWrapper {
-  transform: rotate(200deg);
-}
-
-.arrowNote {
-  transform: rotate(-14deg) translateY(-25%);
-}
-
-@media(--aboveTablet) {
-  .imageAndText {
-    display: flex;
-  }
-
-  .polaroidWrapper {
-    margin: 0 4rem;
-    width: 50%;
-  }
+  left: 40%;
+  transform: translate(0, -100%);
 }

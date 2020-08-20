@@ -1,8 +1,6 @@
-import React from 'react'
-
 import { Polaroid } from 'components/polaroid'
 
-export const ChurchPolaroid = () => {
+export const ChurchPolaroid = ({ width }) => {
   return (
     <Polaroid
       image={{
@@ -10,6 +8,9 @@ export const ChurchPolaroid = () => {
         src: `st-andrews-church.jpg`,
       }}
       rotate={-2}
+      style={{
+        width,
+      }}
       text={`St Andrews Church`}
     />
   )

@@ -37,6 +37,7 @@ module.exports = {
     'object-curly-spacing': ['error', 'always'],
     'no-useless-escape': [0],
     'prefer-promise-reject-errors': [0],
+    'prefer-const': [0],
     'no-return-assign': [0],
     'react-hooks/rules-of-hooks': [2],
     'react-hooks/exhaustive-deps': [0],
@@ -75,6 +76,7 @@ module.exports = {
         allow: 'literal',
       },
     ],
+    'react/react-in-jsx-scope': [0],
     'react/prop-types': [0],
     'react/self-closing-comp': ['error', {
       component: true,

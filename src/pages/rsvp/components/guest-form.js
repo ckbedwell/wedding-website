@@ -1,9 +1,12 @@
-import React from 'react'
+import { Box } from 'components/box'
+import { Select } from 'components/select'
 
 import styles from './guest-form.css'
-import { Select } from '../../../components/select'
 
 const canComeOptions = [
+  {
+    name: `select`,
+  },
   {
     name: `Yes`,
     value: `Yes`,
@@ -37,6 +40,7 @@ export const GuestForm = ({
   idx,
   guestData,
   onChange,
+  single,
 }) => {
   const {
     canCome,
@@ -45,30 +49,34 @@ export const GuestForm = ({
   } = guestData
 
   return (
-    <div className={styles.container}>
-      <label>
-        {`Can ${name} come?`}
-      </label>
-      <Select
-        onChange={value => handleChange(`canCome`, value)}
-        options={canComeOptions}
-        value={canCome}
-      />
-
-      <label>
-        {`Any food requirements?`}
-      </label>
-      <Select
-        onChange={value => handleChange(`foodRequirements`, value)}
-        options={foodRequirementsOptions}
-        value={foodRequirements}
-      />
-      {foodRequirements === `allergies` &&
-        <textarea
-          type="text"
+    <Box
+      backgroundColor={`rgb(244 244 244)`}
+      padding={5}
+    >
+      <Box marginBottom={6}>
+        <Select
+          label={`Can ${getGuestReference(single, name)} come?`}
+          onChange={value => handleChange(`canCome`, value)}
+          options={canComeOptions}
+          value={canCome}
         />
-      }
-    </div>
+      </Box>
+      <Box marginBottom={6}>
+        <Select
+          label={`Any food requirements?`}
+          onChange={value => handleChange(`foodRequirements`, value)}
+          options={foodRequirementsOptions}
+          value={foodRequirements}
+        />
+      </Box>
+      <div>
+        {foodRequirements === `allergies` &&
+        <textarea
+          type={`text`}
+        />
+        }
+      </div>
+    </Box>
   )
 
   function handleChange(fieldName, content) {
@@ -78,4 +86,12 @@ export const GuestForm = ({
       content,
     })
   }
+}
+
+function getGuestReference(single, name) {
+  if (single) {
+    return `you`
+  }
+
+  return name
 }

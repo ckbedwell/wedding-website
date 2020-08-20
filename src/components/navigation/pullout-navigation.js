@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { NavLink } from './navLink'
 
 import styles from './pullout-navigation.css'

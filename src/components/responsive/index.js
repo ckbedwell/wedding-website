@@ -57,3 +57,11 @@ export const Responsive = ({ children, deviceRange = [] }) => {
 
   return isInDeviceSelection ? children : null
 }
+
+export const TabletMobile = ({ children }) => {
+  return (
+    <Responsive deviceRange={[TABLET_KEY, MOBILE_KEY]}>
+      {children}
+    </Responsive>
+  )
+}

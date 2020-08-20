@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Image } from 'components/image'
 import { Text } from 'components/text'
 
@@ -15,24 +13,27 @@ export const Polaroid = ({
 
   return (
     <div
-      className={styles.polaroid}
       style={{
         transform: rotate ? `rotate(${rotate}deg)` : undefined,
         ...style,
       }}
     >
-      <div className={styles.imageWrapper}>
-        <Image
-          ratio={ratio}
-          src={src}
-        />
+      <div className={styles.polaroid}>
+        <div className={styles.imageWrapper}>
+          <Image
+            ratio={ratio}
+            src={src}
+          />
+        </div>
+        {text &&
+        <Text
+          family={`handwriting`}
+          size={5}
+        >
+          {text}
+        </Text>
+        }
       </div>
-      <Text
-        family="handwriting"
-        size={5}
-      >
-        {text}
-      </Text>
     </div>
   )
 }

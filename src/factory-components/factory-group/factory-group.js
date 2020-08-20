@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Group } from 'components/group'
 import { ComponentLayout } from 'components/component-layout'
 

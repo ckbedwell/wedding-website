@@ -1,8 +1,6 @@
 .container {
   --margin: 5rem;
   color: lightblue;
-  margin-right: var(--margin);
-  margin-left: var(--margin);
-  padding: 2rem 0;
+  margin: 2rem var(--margin);
   position: relative;
 }

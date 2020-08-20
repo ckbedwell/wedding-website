@@ -1,5 +1,3 @@
-import React from 'react'
-
 import { Container } from 'components/container'
 import { Image } from 'components/image'
 // import { Group } from 'components/group'
@@ -13,9 +11,9 @@ export const Registry = () => {
   // } = data
 
   return (
-    <Container container="large">
+    <Container container={`large`}>
       <Image
-        src="em-chris-spain-narrow.jpg"
+        src={`em-chris-spain-narrow.jpg`}
       />
     </Container>
   )

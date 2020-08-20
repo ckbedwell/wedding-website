@@ -43,20 +43,20 @@ export const Confetti = () => {
       pIndex++
       this.life = 0
       this.maxlife = 600
-      this.degree = getRandom(0,360)// 開始角度をずらす
-      this.size = Math.floor(getRandom(8,10))// 紙吹雪のサイズに変化をつける
+      this.degree = getRandom(0,360)// Shift start angle
+      this.size = Math.floor(getRandom(8,10))// Change the size of confetti
     };
 
     Dot.prototype.draw = function(x, y){
 
       this.degree += 1
-      this.vx *= 0.99// 重力
-      this.vy *= 0.999// 重力
-      this.x += this.vx+Math.cos(this.degree*Math.PI/180)// 蛇行
+      this.vx *= 0.99// gravity
+      this.vy *= 0.999// gravity
+      this.x += this.vx+Math.cos(this.degree*Math.PI/180)// meandering
       this.y += this.vy
       this.width = this.size
-      this.height = Math.cos(this.degree*Math.PI/45)*this.size// 高さを変化させて、回転させてるっぽくみせる
-      // 紙吹雪の描写
+      this.height = Math.cos(this.degree*Math.PI/45)*this.size// Change the height and make it look like it is rotating
+      // Confetti depiction
       ctx.fillStyle = this.color
       ctx.beginPath()
       ctx.moveTo(this.x+this.x/2, this.y+this.y/2)
@@ -66,12 +66,12 @@ export const Confetti = () => {
       ctx.closePath()
       ctx.fill()
       this.life++
-      // lifeがなくなったら紙吹雪を削除
+      // Remove confetti when life is gone
       if(this.life >= this.maxlife){
         delete particles[this.id]
       }
     }
-    // リサイズ処理
+    // Resizing process
     window.addEventListener("resize", function(){
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
@@ -80,9 +80,9 @@ export const Confetti = () => {
     })
 
     function loop(){
-    // 全画面に色をしく。透過率をあげると残像が強くなる
+    // Color the entire screen. Increasing the transmittance increases the afterimage
       ctx.clearRect(0,0, canvas.width, canvas.height)
-      // 紙吹雪の量の調節
+      // Adjusting the amount of confetti
       if(frameId % 3 === 0) {
         new Dot(canvas.width*Math.random()-canvas.width+canvas.width/2*Math.random(), -canvas.height/2, getRandom(1, 3),  getRandom(2, 4),"#ED1A3D")
         new Dot(canvas.width*Math.random()+canvas.width-canvas.width*Math.random(), -canvas.height/2,  -1 * getRandom(1, 3),  getRandom(2, 4),"green")
