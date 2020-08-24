@@ -12,7 +12,7 @@ export const HeaderTitle = () => {
     >
       <Text
         family={`secondary`}
-        size={7}
+        size={10}
       >
         {headerTitle.title}
       </Text>

@@ -59,7 +59,7 @@ const LocationContent = ({
     <div>
       <Text
         family={`secondary`}
-        size={10}
+        size={14}
         tag={`h1`}
       >
         {name}
@@ -99,7 +99,7 @@ const LocationContent = ({
         <Text
           fontWeight={700}
           lineHeight={1}
-          size={3}
+          size={6}
         >
           {telephone}
         </Text>

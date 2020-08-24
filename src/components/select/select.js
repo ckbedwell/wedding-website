@@ -1,3 +1,8 @@
+import { Box } from 'components/box'
+import { Text } from 'components/text'
+
+import styles from './select.css'
+
 export const Select = ({
   label,
   options,
@@ -5,13 +10,17 @@ export const Select = ({
   value,
 }) => {
   return (
-    <div>
-      <div>
+    <Text
+      family="primary"
+      size={4}
+    >
+      <Box marginBottom={3}>
         <label>
           {label}
         </label>
-      </div>
+      </Box>
       <select
+        className={styles.select}
         onChange={e => onChange(e.target.value)}
         value={value}
       >
@@ -24,6 +33,7 @@ export const Select = ({
           </option>
         ))}
       </select>
-    </div>
+    
+    </Text>
   )
 }

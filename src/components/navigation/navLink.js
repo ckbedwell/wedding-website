@@ -27,7 +27,7 @@ export const NavLink = ({
     >
       <Text
         family={`primary`}
-        size={3}
+        size={5}
       >
         {children}
       </Text>

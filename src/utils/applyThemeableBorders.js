@@ -26,7 +26,7 @@ export function applyThemeableBorders(borders, context) {
       sides = [`all`],
       size = `1px`,
       style = `solid`,
-      color,
+      color = `currentColor`,
     } = entry
 
     sides.forEach(side => {

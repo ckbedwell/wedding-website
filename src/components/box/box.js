@@ -36,25 +36,22 @@ export const Box = forwardRef(({
   const Tag = tag
 
   return (
-    <div>
-      {/* Div above So that boxes in boxes don't interfere with each other's gap value */}
-      <Tag
-        className={classNames(styles.box, {
-          [className || '']: Boolean(className),
-          [styles.horizontal]: direction === `horizontal`,
-          [styles.vertical]: direction === `vertical`,
-          [styles.center]: center,
-          [styles.grow]: flex === `grow`,
-          [styles.flexInline]: flex === `inline`,
-          [styles.relative]: relative,
-        })}
-        ref={ref}
-        style={getInlineStyles()}
-        {...rest}
-      >
-        {children}
-      </Tag>
-    </div>
+    <Tag
+      className={classNames(styles.box, {
+        [className || '']: Boolean(className),
+        [styles.horizontal]: direction === `horizontal`,
+        [styles.vertical]: direction === `vertical`,
+        [styles.center]: center,
+        [styles.grow]: flex === `grow`,
+        [styles.flexInline]: flex === `inline`,
+        [styles.relative]: relative,
+      })}
+      ref={ref}
+      style={getInlineStyles()}
+      {...rest}
+    >
+      {children}
+    </Tag>
   )
 
   function getInlineStyles() {

@@ -12,7 +12,7 @@ export const ReceptionText = () => {
     <div>
       <Text
         family={`secondary`}
-        size={10}
+        size={15}
         tag={`h1`}
       >
         {`Alcumlow Wedding Barn`}

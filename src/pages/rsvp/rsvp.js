@@ -3,6 +3,7 @@ import React from 'react'
 import { dotProps } from 'utils/dot-props'
 import { useDatabase } from 'database/useDatabase'
 import { Container } from 'components/container'
+import { Grid } from 'components/grid'
 import { GuestForm } from './components/guest-form'
 
 const UPDATE_VALUE = `UPDATE_VALUE`
@@ -40,17 +41,21 @@ export const RSVP = () => {
 
   function renderContent() {
     if (rsvpState[docId]?.invited) {
-      return rsvpState[docId].invited.map((invitedGuest, idx) => {
-        return (
-          <GuestForm
-            guestData={invitedGuest}
-            idx={idx}
-            key={invitedGuest.name}
-            onChange={handleChange}
-            single={rsvpState[docId].invited.length === 1}
-          />
-        )
-      })
+      return (
+        <Grid columns={rsvpState[docId].invited.length}>
+          {rsvpState[docId].invited.map((invitedGuest, idx) => {
+            return (
+              <GuestForm
+                guestData={invitedGuest}
+                idx={idx}
+                key={invitedGuest.name}
+                onChange={handleChange}
+                single={rsvpState[docId].invited.length === 1}
+              />
+            )
+          })}
+        </Grid>
+      )
     }
 
     return null

@@ -1,0 +1,37 @@
+.guestForm {
+  background-color: rgb(247 247 247);
+  height: 900px;
+  max-width: 800px;
+}
+
+.guestFormInner {
+  background-color: rgb(247 247 247);
+  background-image: url('/floral-border-2.png'), url('/floral-border-1.png');
+  background-position: 0 0, 100% 100%;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 50%, 40%;
+  height: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.decoration {
+  --inlay: 3rem;
+  --size: 250px;
+  height: var(--size);
+  pointer-events: none;
+  position: absolute;
+  width: var(--size);
+}
+
+.decorationBottom {
+  composes: decoration;
+  left: var(--inlay);
+  bottom: var(--inlay);
+}
+
+.decorationTop {
+  composes: decoration;
+  right: var(--inlay);
+  top: var(--inlay);
+}

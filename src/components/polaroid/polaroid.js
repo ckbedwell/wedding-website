@@ -28,7 +28,7 @@ export const Polaroid = ({
         {text &&
         <Text
           family={`handwriting`}
-          size={5}
+          size={7}
         >
           {text}
         </Text>

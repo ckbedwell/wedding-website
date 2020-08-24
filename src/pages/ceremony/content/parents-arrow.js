@@ -16,7 +16,7 @@ export const ParentsArrow = () => {
       <Text
         className={styles.arrowNote}
         family={`handwriting`}
-        size={5}
+        size={8}
       >
         {`Em's parents got married here 35 years ago!`}
       </Text>

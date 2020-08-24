@@ -4,9 +4,9 @@ export function applyThemeableColor(color, context) {
     mode,
   } = context
 
-  const usableColor = typeof color === `string`
-    ? color
-    : color[mode]
+  const usableColor = typeof color === `object`
+    ? color[mode]
+    : color
 
   if (config.colors && config.colors[usableColor]) {
     return config.colors[usableColor]

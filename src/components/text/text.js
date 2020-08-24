@@ -6,7 +6,7 @@ export const Text = ({
   children,
   className,
   color,
-  factor = 6,
+  factor = 4,
   family = `primary`,
   fontWeight,
   lineHeight,

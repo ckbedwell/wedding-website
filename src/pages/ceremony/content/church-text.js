@@ -12,7 +12,7 @@ export const ChurchText = () => {
     <div>
       <Text
         family={`secondary`}
-        size={10}
+        size={14}
         tag={`h1`}
       >
         {`St Andrews Church`}

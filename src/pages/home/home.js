@@ -21,7 +21,7 @@ export const Home = () => {
           <div className={styles.card}>
             <Text
               family={`secondary`}
-              size={15}
+              size={18}
               tag={`h1`}
               textAlign={`center`}
             >
