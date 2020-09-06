@@ -1,11 +1,10 @@
 import { Box } from 'components/box'
 import { Text } from 'components/text'
 
-import styles from './select.css'
+import styles from './textarea.css'
 
-export const Select = ({
+export const Textarea = ({
   label,
-  options,
   onChange,
   value,
 }) => {
@@ -19,21 +18,11 @@ export const Select = ({
           {label}
         </label>
       </Box>
-      <select
-        className={styles.select}
+      <textarea
+        className={styles.textarea}
         onChange={e => onChange(e.target.value)}
         value={value}
-      >
-        {options.map(option => (
-          <option
-            key={option.value || option.name}
-            value={option.value}
-          >
-            {option.name}
-          </option>
-        ))}
-      </select>
-    
+      />
     </Text>
   )
 }

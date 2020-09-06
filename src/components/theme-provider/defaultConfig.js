@@ -1,7 +1,7 @@
 export const defaultConfig = {
   spacing: {
-    factor: 0.4,
-    unit: `rem`,
+    factor: 4,
+    unit: `px`,
   },
   colors: {},
   typography: {

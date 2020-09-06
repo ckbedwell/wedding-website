@@ -1,3 +1,5 @@
+import { capitalize } from 'utils/capitalize'
+
 export function applySizing({
   size,
   rule,
@@ -32,11 +34,4 @@ export function applySizing({
 
 function getValue(value, factor, unit) {
   return `${value * factor}${unit}`
-}
-
-function capitalize(word) {
-  const firstChar = word.charAt(0).toUpperCase()
-  const rest = word.slice(1)
-
-  return `${firstChar}${rest}`
 }

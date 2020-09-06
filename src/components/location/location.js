@@ -12,8 +12,11 @@ export const Location = ({ location }) => {
           </Text>
         ))}
       </Box>
-      <Button>
-        Get directions
+      <Button
+        target={`_blank`}
+        to={`https://www.google.com/maps/dir//${location.join(',')}`}
+      >
+        {`Get directions`}
       </Button>
     </>
   )

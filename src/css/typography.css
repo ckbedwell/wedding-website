@@ -3,6 +3,10 @@
 :global {
   html {
     font-size: 62.5%;
+
+    @media(--tablet) {
+      font-size: 50%;
+    }
   }
 
   body {

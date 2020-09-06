@@ -16,7 +16,7 @@ import navigation from 'data/navigation.json'
 export const Header = () => {
   const open = useSelector(state => state.pullout.open)
   const dispatch = useDispatch()
-  const navLength = navigation.length / 2
+  const navLength = Math.ceil(navigation.length / 2)
   const nav1 = navigation.slice(0, navLength)
   const nav2 = navigation.slice(navLength, navigation.length)
   const [ref, dimensions] = useDimensions()

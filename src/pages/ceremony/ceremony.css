@@ -1,5 +1,14 @@
-.desktopArrow {
+.arrow {
   position: absolute;
-  left: 40%;
   transform: translate(0, -100%);
+}
+
+.desktopArrow {
+  composes: arrow;
+  left: 40%;
+}
+
+.tabletArrow {
+  composes: arrow;
+  right: 0;
 }

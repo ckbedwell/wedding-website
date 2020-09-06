@@ -51,7 +51,9 @@ export const Ceremony = () => {
           <ChurchText />
         </Section>
         <Section>
-          <ParentsArrow />
+          <div className={styles.tabletArrow}>
+            <ParentsArrow />
+          </div>
           <ParentsPolaroids />
         </Section>
       </TabletMobile>

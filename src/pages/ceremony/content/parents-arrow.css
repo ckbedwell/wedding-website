@@ -1,8 +1,11 @@
 .infoArrow {
   z-index: 1;
   display: flex;
-  width: 550px;
   align-items: center;
+
+  @media(--aboveTablet) {
+    width: 550px;
+  }
 }
 
 .arrowWrapper {
@@ -11,4 +14,11 @@
 
 .arrowNote {
   transform: rotate(-14deg) translateY(-55%);
+
+  @media(--tablet) {
+    left: 70px;
+    top: 70px;
+    max-width: 220px;
+    position: relative;
+  }
 }

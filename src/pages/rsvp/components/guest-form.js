@@ -1,7 +1,10 @@
+import classNames from 'classnames'
+
 import { Box } from 'components/box'
-import { Svg } from 'components/svg'
+import { DecorativeBox } from 'components/decorative-box'
 import { Select } from 'components/select'
 import { Text } from 'components/text'
+import { Textarea } from 'components/textarea'
 
 import styles from './guest-form.css'
 
@@ -45,21 +48,15 @@ export const GuestForm = ({
   single,
 }) => {
   const {
+    allergies,
     canCome,
     foodRequirements,
     name,
   } = guestData
 
   return (
-    <Box
-      className={styles.guestForm}
-      padding={3}
-    >
-      <Box
-        className={styles.guestFormInner}
-        padding={50}
-        relative
-      >
+    <DecorativeBox>
+      <div className={styles.fieldsWrapper}>
         <Box
           borders={[{
             sides: [`bottom`],
@@ -91,31 +88,19 @@ export const GuestForm = ({
             value={foodRequirements}
           />
         </Box>
-        <div>
-          {foodRequirements === `allergies` &&
-          <textarea
-            type={`text`}
+        <div
+          className={classNames(styles.optional, {
+            [styles.appear]: foodRequirements === `allergies`,
+          })}
+        >
+          <Textarea
+            label={`What allergies do you have?`}
+            onChange={value => handleChange(`allergies`, value)}
+            value={allergies}
           />
-          }
         </div>
-        <Box
-          borders={{
-            color: `lightgrey`,
-            sides: [`right`, `top`],
-            size: `2px`,
-          }}
-          className={styles.decorationTop}
-        />
-        <Box
-          borders={{
-            color: `lightgrey`,
-            sides: [`left`, `bottom`],
-            size: `2px`,
-          }}
-          className={styles.decorationBottom}
-        />
-      </Box>
-    </Box>
+      </div>
+    </DecorativeBox>
   )
 
   function handleChange(fieldName, content) {

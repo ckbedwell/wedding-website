@@ -4,20 +4,51 @@ import classNames from 'classnames'
 import styles from './link.css'
 
 export const Link = ({
+  bodyLink,
   children,
   className,
-  bodyLink,
-  ...props
+  onClick,
+  to,
+  ...rest
 }) => {
+  const props = {
+    className: classNames(styles.link, {
+      [className]: Boolean(className),
+      [styles.bodyLink]: bodyLink,
+    }),
+    onClick: handleClick,
+    ...rest,
+  }
+
+  if (!to) {
+    return children
+  }
+
+  if (
+    to.startsWith(`mailto:`) ||
+    to.startsWith(`http`)
+  ) {
+    return (
+      <a
+        {...props}
+        href={to}
+      >
+        {children}
+      </a>
+    )
+  }
+
   return (
     <RouterLink
-      className={classNames(styles.link, {
-        [className]: Boolean(className),
-        [styles.bodyLink]: bodyLink,
-      })}
       {...props}
+      to={to}
     >
       {children}
     </RouterLink>
   )
+
+  function handleClick() {
+    onClick && onClick()
+    window.scrollTo(0, 0)
+  }
 }

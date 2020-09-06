@@ -6,10 +6,13 @@ import styles from './button.css'
 export const Button = ({
   children,
   to,
+  ...rest
 }) => {
   const props = {
     className: styles.button,
+    ...rest,
   }
+
   if (to) {
     return (
       <Link

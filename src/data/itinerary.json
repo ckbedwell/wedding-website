@@ -1,7 +1,7 @@
 [
   {
     "id": "ceremony",
-    "arrive": "12:30",
+    "link": "/ceremony",
     "start": "13:00",
     "location": [
       "St Andrews C Of E Church",
@@ -12,12 +12,17 @@
   },
   {
     "id": "reception",
-    "arrive": "",
+    "link": "/reception",
     "start": "15:00",
     "location": [
+      "Alcumlow Wedding Barn",
       "Chance Hall Ln",
       "Congleton",
       "CW12 4TL"
     ]
+  },
+  {
+    "id": "carriages",
+    "start": "midnight"
   }
 ]
