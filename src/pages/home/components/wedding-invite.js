@@ -27,7 +27,7 @@ export const WeddingInvite = () => {
           family={`primary`}
           size={4}
         >
-          {`Mr and Mrs Buttery request the pleasure of your company to celebrate the marriage of their daughter Emily Kate to Mr Christopher Bedwell`}
+          {`Paul and Amanda Buttery request the pleasure of your company to celebrate the marriage of their daughter Emily Kate to Mr Christopher Bedwell`}
         </Text>
       </Box>
       <Box marginBottom={4}>

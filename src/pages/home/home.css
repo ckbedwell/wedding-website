@@ -1,6 +1,19 @@
-.main {
-  position: relative;
-  top: -10rem;
+@media(--aboveTablet) {
+  .main {
+    position: relative;
+    top: -10rem;
+  }
+
+  .border {
+    background: black;
+    height: calc(10rem + 1px);
+    left: 50%;
+    position: absolute;
+    top: -1px;
+    transform: translateX(-50%);
+    width: calc(100% + 2px);
+    z-index: 0;
+  }
 }
 
 .card {
@@ -9,15 +22,4 @@
   padding: 3rem;
   position: relative;
   z-index: 1;
-}
-
-.border {
-  background: black;
-  height: calc(10rem + 1px);
-  left: 50%;
-  position: absolute;
-  top: -1px;
-  transform: translateX(-50%);
-  width: calc(100% + 2px);
-  z-index: 0;
 }

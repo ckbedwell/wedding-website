@@ -1,6 +1,7 @@
 .arrow {
   position: absolute;
   transform: translate(0, -100%);
+  pointer-events: none;
 }
 
 .desktopArrow {
