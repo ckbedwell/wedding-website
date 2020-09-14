@@ -123,7 +123,7 @@ export const RSVP = () => {
       return (
         <Box marginBottom={8}>
           <Text textAlign={`center`}>
-            {`You submitted this form with the following details on the ${getLastSubmittedDate()}. `}
+            {`You submitted this RSVP with the following details on the ${getLastSubmittedDate()}. `}
             {`To update them, `}
             <button
               className={styles.resubmit}

@@ -17,11 +17,6 @@ const App = () => {
         <div>
           <Header />
           <Switch>
-            <Route
-              component={Home}
-              exact
-              path={`/`}
-            />
             {navigation.map(({ href }) => {
               return (
                 <Route
@@ -32,6 +27,10 @@ const App = () => {
                 />
               )
             })}
+            <Route
+              component={Home}
+              path={`/`}
+            />
           </Switch>
           <Confetti />
         </div>
