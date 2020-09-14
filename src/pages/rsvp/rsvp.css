@@ -1,0 +1,8 @@
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.resubmit {
+  color: rgba(73, 140, 206, 1);
+}

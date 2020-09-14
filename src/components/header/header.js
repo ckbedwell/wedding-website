@@ -5,6 +5,7 @@ import { useDimensions } from 'utils/useDimensions'
 import { togglePullout } from 'store/pullout-slice'
 import { HeaderNavigation } from 'components/navigation'
 import { HeaderTitle } from 'components/header'
+import { Svg } from 'components/svg'
 import {
   Desktop,
   TabletMobile,
@@ -39,8 +40,9 @@ export const Header = () => {
           <button
             className={styles.menuButton}
             onClick={handleClick}
+            title={`menu`}
           >
-            {`Menu`}
+            <Svg icon={`menu`} />
           </button>
           <HeaderTitle />
         </TabletMobile>

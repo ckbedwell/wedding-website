@@ -1,8 +1,11 @@
 import { Button } from 'components/button'
 
-export const SubmitButton = ({ onClick }) => {
+export const SubmitButton = ({ disabled, onClick }) => {
   return (
-    <Button onClick={onClick}>
+    <Button
+      disabled={disabled}
+      onClick={disabled ? undefined : onClick}
+    >
       {`Submit`}
     </Button>
   )

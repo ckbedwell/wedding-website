@@ -7,7 +7,10 @@ export const Svg = ({
   className,
   color = 'currentColor',
   icon,
-  size: [width, height = width],
+  size: [
+    width = `1em`,
+    height = width,
+  ] = [],
 }) => (
   <svg
     className={classNames(styles.svg, {
