@@ -119,7 +119,7 @@ export const RSVP = () => {
   }
 
   function renderSubmittedMessage() {
-    if (guestData?.submittedDates.length) {
+    if (guestData?.submittedDates?.length) {
       return (
         <Box marginBottom={8}>
           <Text textAlign={`center`}>
@@ -140,8 +140,8 @@ export const RSVP = () => {
   }
 
   function getLastSubmittedDate() {
-    const length = guestData?.submittedDates.length
-    const lastDate = guestData?.submittedDates[length - 1]
+    const length = guestData.submittedDates.length
+    const lastDate = guestData.submittedDates[length - 1]
 
     return new Date(lastDate).toLocaleDateString()
   }
