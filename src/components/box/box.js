@@ -45,7 +45,7 @@ export const Box = forwardRef(({
         [styles.grow]: flex === `grow`,
         [styles.flexInline]: flex === `inline`,
         [styles.relative]: relative,
-        [styles.withGap]: Boolean(direction) && Boolean(gap),
+        [styles.withGap]: Boolean(gap),
       })}
       ref={ref}
       style={getInlineStyles()}
