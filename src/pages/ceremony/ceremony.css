@@ -2,6 +2,8 @@
   position: absolute;
   transform: translate(0, -100%);
   pointer-events: none;
+  max-width: 100vw;
+  overflow: hidden;
 }
 
 .desktopArrow {

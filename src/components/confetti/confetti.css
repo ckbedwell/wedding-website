@@ -4,6 +4,13 @@
   left: 0;
   width: 100vw;
   min-height: 100vh;
-  max-height: 150vh;
+  height: 1940px;
   pointer-events: none;
+  overflow: hidden;
+  transition: 1s;
+  opacity: 0;
+
+  &.on {
+    opacity: 1;
+  }
 }

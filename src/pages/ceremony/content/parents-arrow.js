@@ -24,7 +24,7 @@ export const ParentsArrow = () => {
         <Svg
           color={`black`}
           icon={`drawn-arrow`}
-          size={[`25rem`]}
+          size={[`25rem`, `27rem`]}
         />
       </div>
     )

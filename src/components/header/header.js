@@ -3,6 +3,9 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { useDimensions } from 'utils/useDimensions'
 import { togglePullout } from 'store/pullout-slice'
+import { Box } from 'components/box'
+import { Container } from 'components/container'
+import { ConfettiToggle } from 'components/confetti-toggle'
 import { HeaderNavigation } from 'components/navigation'
 import { HeaderTitle } from 'components/header'
 import { Svg } from 'components/svg'
@@ -25,28 +28,44 @@ export const Header = () => {
   return (
     <>
       <div style={{ height: dimensions.height }} />
-      <div
+      <Box
+        center
         className={classNames(styles.container, {
           [styles.pulloutOpen]: open,
         })}
         ref={ref}
       >
-        <Desktop>
-          <HeaderNavigation items={nav1} />
-          <HeaderTitle />
-          <HeaderNavigation items={nav2} />
-        </Desktop>
-        <TabletMobile>
-          <button
-            className={styles.menuButton}
-            onClick={handleClick}
-            title={`menu`}
+        <Container
+          container={`large`}
+          padded
+        >
+          <Box
+            center
+            direction={`horizontal`}
+            relative
           >
-            <Svg icon={`menu`} />
-          </button>
-          <HeaderTitle />
-        </TabletMobile>
-      </div>
+            <Desktop>
+            
+              <HeaderNavigation items={nav1} />
+              <HeaderTitle />
+              <HeaderNavigation items={nav2} />
+            </Desktop>
+            <TabletMobile>
+              <button
+                className={styles.menuButton}
+                onClick={handleClick}
+                title={`menu`}
+              >
+                <Svg icon={`menu`} />
+              </button>
+              <HeaderTitle />
+            </TabletMobile>
+            <div className={styles.confettiToggleWrapper}>
+              <ConfettiToggle />
+            </div>
+          </Box>
+        </Container>
+      </Box>
     </>
   )
 

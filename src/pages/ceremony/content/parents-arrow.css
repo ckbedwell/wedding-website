@@ -21,4 +21,8 @@
     max-width: 220px;
     position: relative;
   }
+
+  @media(--mobile) {
+    top: 90px;
+  }
 }

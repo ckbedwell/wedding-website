@@ -1,0 +1,56 @@
+.switch {
+  --toggleHeight: 3.4rem;
+  --switchGap: 0.4rem;
+  --switchWidth: 6rem;
+  position: relative;
+  display: inline-block;
+  width: var(--switchWidth);
+  height: var(--toggleHeight);
+}
+
+.checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  &:checked {
+    + .slider {
+      background-color: rgb(33 150 243);
+    }
+
+    + .slider:before {
+      transform: translateX(calc(var(--switchWidth) - var(--toggleHeight)));
+    }
+  }
+}
+
+/* The slider */
+.slider {
+  background-color: rgb(204 204 204);
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: 0.3s;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: calc(var(--toggleHeight) - (var(--switchGap) * 2));
+    width: calc(var(--toggleHeight) - (var(--switchGap) * 2));
+    left: var(--switchGap);
+    bottom: var(--switchGap);
+    background-color: white;
+    transition: 0.3s;
+  }
+
+  &.round {
+    border-radius: var(--toggleHeight);
+
+    &:before {
+      border-radius: 50%;
+    }
+  }
+}
