@@ -1,0 +1,14 @@
+.siteMessage {
+  color: white;
+  position: fixed;
+  width: 100vw;
+  bottom: 0;
+  z-index: 2;
+}
+
+.clearError {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -14,12 +14,16 @@ export const Confetti = () => {
   }, [])
 
   return (
-    <canvas
-      className={classNames(styles.confetti, {
+    <div
+      className={classNames(styles.confettiWrapper, {
         [styles.on]: confetti,
       })}
-      id={CANVAS_ID}
-    />
+    >
+      <canvas
+        className={styles.confetti}
+        id={CANVAS_ID}
+      />
+    </div>
   )
 
   // https://codepen.io/ma_suwa/pen/oNXxQxZ

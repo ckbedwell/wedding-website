@@ -24,7 +24,7 @@ export const ReceptionText = () => {
       </Box>
       <Box marginBottom={4}>
         <Text>
-          {`It is very close to the village of Congleton, where we have put together a list of `}
+          {`It is very close to the village of Congleton and Alsager, where we have put together a list of `}
           <Link
             bodyLink
             to={`/accommodation`}

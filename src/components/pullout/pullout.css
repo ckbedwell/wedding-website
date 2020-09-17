@@ -20,3 +20,13 @@
 .pulloutOpen {
   left: 0;
 }
+
+.overlay {
+  background-color: rgba(0,0,0,0.5);
+  height: 100vh;
+  left: var(--pulloutWidth);
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+}

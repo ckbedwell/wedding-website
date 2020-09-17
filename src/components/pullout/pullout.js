@@ -27,7 +27,15 @@ export const Pullout = () => {
       })}
       {...handlers}
     >
-      {open && <Component />}
+      {open &&
+        <>
+          <Component />
+          <div
+            className={styles.overlay}
+            onClick={() => dispatch(closePullout())}
+          />
+        </>
+      }
     </div>
   )
 

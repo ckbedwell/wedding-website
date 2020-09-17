@@ -9,12 +9,13 @@ export const ConfettiToggle = () => {
   return (
     <Switch
       checked={confetti}
-      onClick={handleClick}
+      onChange={handleChange}
+      title={`Turn confetti ${confetti ? `off` : `on`}`}
       type={`round`}
     />
   )
 
-  function handleClick() {
+  function handleChange() {
     dispatch(toggleConfetti())
   }
 }

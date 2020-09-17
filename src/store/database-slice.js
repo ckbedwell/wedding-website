@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { Database } from 'database/database'
-import queryString from 'query-string'
 
 const collection = `guests`
 const storageKey = `docId`
@@ -11,7 +10,7 @@ const { actions, reducer } = createSlice({
     loading: undefined,
     database: undefined,
     guestData: undefined,
-    docId: queryString.parse(window.location.search).id || getKey(),
+    docId: undefined,
     error: undefined,
   },
   reducers: {
@@ -30,10 +29,14 @@ const { actions, reducer } = createSlice({
     setError(state, { payload }) {
       state.error = payload
     },
+    clearError(state) {
+      state.error = undefined
+    },
   },
 })
 
 export const {
+  clearError,
   connect,
   setDocId,
   setError,
@@ -68,13 +71,22 @@ function getGuest(id) {
           }
         })
         .catch(e => {
-          setError(e)
+          dispatch(setError(getError(e.message)))
         })
         .finally(() => {
           dispatch(updateLoading(false))
         })
     }
   }
+}
+
+function getError(error) {
+  const errorMap = {
+    'No data': `Unable to find your entry in our guest list. Are you sure you followed the link correctly?`,
+    generic: `Something went wrong with getting your details.`,
+  }
+
+  return errorMap[error] || errorMap.generic
 }
 
 function getDocId(encodedString) {

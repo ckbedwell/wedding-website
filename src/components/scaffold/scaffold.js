@@ -8,7 +8,6 @@ import { setUp } from 'store/database-slice'
 
 import styles from './scaffold.css'
 
-
 export const Scaffold = ({ children }) => {
   const { search } = useLocation()
   const open = useSelector(state => state.pullout.open)
@@ -26,6 +25,7 @@ export const Scaffold = ({ children }) => {
       })}
     >
       {children}
+      
     </div>
   )
 }

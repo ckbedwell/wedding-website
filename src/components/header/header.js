@@ -56,7 +56,10 @@ export const Header = () => {
                 onClick={handleClick}
                 title={`menu`}
               >
-                <Svg icon={`menu`} />
+                <Svg
+                  icon={`menu`}
+                  size={[`2em`]}
+                />
               </button>
               <HeaderTitle />
             </TabletMobile>

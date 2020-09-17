@@ -4,15 +4,19 @@ import styles from './switch.css'
 
 export const Switch = ({
   checked,
-  onClick,
+  onChange,
   type,
+  ...rest
 }) => {
   return (
-    <label className={styles.switch}>
+    <label
+      className={styles.switch}
+      {...rest}
+    >
       <input
         checked={checked}
         className={styles.checkbox}
-        onClick={onClick}
+        onChange={onChange}
         type={`checkbox`}
       />
       <span

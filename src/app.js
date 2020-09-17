@@ -1,5 +1,6 @@
 import { hot } from 'react-hot-loader/root'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import { Header } from 'components/header'
 import { Confetti } from 'components/confetti'
@@ -7,10 +8,13 @@ import { Pullout } from 'components/pullout'
 import { Scaffold } from 'components/scaffold'
 import { Home } from 'pages/home'
 import { pageMap } from 'pages'
+import { SiteMessage } from 'components/site-message'
 
 import navigation from 'data/navigation.json'
 
 const App = () => {
+  const error = useSelector(state => state.database.error)
+
   return (
     <BrowserRouter>
       <Scaffold>
@@ -33,6 +37,11 @@ const App = () => {
             />
           </Switch>
           <Confetti />
+          {error &&
+            <SiteMessage>
+              {error}
+            </SiteMessage>
+          }
         </div>
         <Pullout />
       </Scaffold>

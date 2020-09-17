@@ -16,6 +16,6 @@ export const store = configureStore({
   middleware: getDefaultMiddleware({
     // enable for debugging
     immutableCheck: false,
-    // serializableCheck: false,
+    serializableCheck: false,
   }),
 })

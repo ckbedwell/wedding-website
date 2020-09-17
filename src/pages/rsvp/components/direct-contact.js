@@ -19,6 +19,7 @@ export const DirectContact = () => {
           <Box
             className={styles.directContact}
             direction={`vertical`}
+            justifyContent={`center`}
             padding={{
               vertical: 30,
             }}
@@ -46,7 +47,7 @@ export const DirectContact = () => {
             style={{ fontStyle: `italic` }}
             textAlign={`center`}
           >
-            {`If you did follow that link and are seeing this message, let me know and I'll fix it!`}
+            {`If you did follow that link and are seeing this message, let Chris know and he'll fix it!`}
           </Text>
         </Box>
       </Container>

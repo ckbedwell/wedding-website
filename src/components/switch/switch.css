@@ -1,7 +1,7 @@
 .switch {
-  --toggleHeight: 3.4rem;
+  --toggleHeight: 3rem;
   --switchGap: 0.4rem;
-  --switchWidth: 6rem;
+  --switchWidth: 5.5rem;
   position: relative;
   display: inline-block;
   width: var(--switchWidth);
