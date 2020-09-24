@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { Database } from 'database/database'
 
-const collection = `guests`
+export const GUEST_COLLECTION = `guests`
 const storageKey = `docId`
 
 const { actions, reducer } = createSlice({
@@ -53,18 +53,20 @@ export function setUp(id) {
 
 function getGuest(id) {
   return function(dispatch, getState) {
+    const { database } = getState().database
     const idToUse = id || getKey()
 
     if (idToUse) {
       const docId = getDocId(idToUse)
       dispatch(updateLoading(true))
 
-      getState().database.database.get(collection, docId)
+      database.get(GUEST_COLLECTION, docId)
         .then(data => {
           if (data) {
             dispatch(setDocId(docId))
             dispatch(update(data))
             storeKey(idToUse)
+            trackVisit(database, docId, data)
           } else {
             window.localStorage.removeItem(storageKey)
             throw new Error(`No data`)
@@ -78,6 +80,16 @@ function getGuest(id) {
         })
     }
   }
+}
+
+function trackVisit(database, docId, data) {
+  database.update(GUEST_COLLECTION, docId, {
+    ...data,
+    visits: [
+      ...(data?.visits || []),
+      new Date().getTime(),
+    ],
+  })
 }
 
 function getError(error) {

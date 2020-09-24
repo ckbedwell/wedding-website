@@ -1,21 +1,17 @@
-const guestModel = {
+export const guest = {
+  name: ``,
+  canCome: ``,
+  foodRequirements: ``,
+  allergies: ``,
+}
+
+export const invite = {
   invited: [
-    {
-      name: `Chris`,
-      icon: ``,
-      canCome: true,
-      foodRequirements: ``,
-      allergies: ``,
-    },
-    {
-      name: `Emily`,
-      icon: ``,
-      canCome: true,
-      foodRequirements: ``,
-      allergies: ``,
-    },
+    guest,
   ],
-  peronsalisedMessage: `I really hope you can come!`,
+  peronsalisedMessage: ``,
   songChoice: ``,
-  visits: ``,
+  visits: [],
+  submitted: false,
+  submittedDates: [],
 }

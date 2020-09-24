@@ -11,6 +11,7 @@ import { Grid } from 'components/grid'
 import { GuestForm } from './components/guest-form'
 import { SubmitButton } from './components/submit-button'
 import { DirectContact } from './components/direct-contact'
+import { GUEST_COLLECTION } from 'store/database-slice'
 
 import styles from './rsvp.css'
 
@@ -183,7 +184,7 @@ export const RSVP = () => {
   function handleSubmit() {
     setDisabled(true)
 
-    database.update(`guests`, docId, {
+    database.update(GUEST_COLLECTION, docId, {
       ...rsvpState,
       submitted: true,
       submittedDates: [...(guestData.submittedDates || []), new Date().getTime()],

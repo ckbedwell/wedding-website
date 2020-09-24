@@ -2,13 +2,15 @@ import { Box } from 'components/box'
 
 import styles from './decorative-box.css'
 
-export const DecorativeBox = ({ children }) => {
+export const DecorativeBox = ({ backgroundColor, children, ...props }) => {
   return (
     <Box
       className={styles.decorativeBox}
       padding={3}
+      {...props}
     >
       <Box
+        backgroundColor={backgroundColor}
         className={styles.boxInner}
         direction={`vertical`}
         justifyContent={`center`}

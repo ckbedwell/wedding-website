@@ -10,9 +10,13 @@ export class Database {
     return (
       this.firestore.collection(collection).get()
         .then(data => {
-        // data is an object with a forEach method
-          const build = []
-          data.forEach(doc => build.push(doc.data()))
+          // data is an object with a forEach method
+          let build = {}
+
+          data.forEach(doc => {
+            build[doc.id] = doc.data()
+          })
+
           return build
         })
     )
@@ -26,7 +30,7 @@ export class Database {
   }
 
   set(collection, id, data) {
-    this.firestore.collection(collection).doc(id).set(data)
+    return this.firestore.collection(collection).doc(id).set(data)
   }
 
   update(collection, id, data) {

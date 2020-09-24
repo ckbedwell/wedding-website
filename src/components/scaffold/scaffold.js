@@ -25,7 +25,6 @@ export const Scaffold = ({ children }) => {
       })}
     >
       {children}
-      
     </div>
   )
 }
