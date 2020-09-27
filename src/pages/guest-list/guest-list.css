@@ -1,0 +1,13 @@
+.table {
+  border: 1px solid lightgrey;
+}
+
+.header {
+  background-color: lightblue;
+}
+
+.entries {
+  >:nth-child(odd) {
+    background: rgb(255, 246, 234);
+  }
+}

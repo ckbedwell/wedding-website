@@ -2,24 +2,27 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { GUEST_COLLECTION } from 'store/database-slice'
-import { guest, invite } from 'models/guest'
 import { capitalize } from 'utils/capitalize'
+import * as models from 'models/guest'
 import { Box } from 'components/box'
 import { Container } from 'components/container'
 import { Grid } from 'components/grid'
 import { Text } from 'components/text'
+import { InviteEntry } from './invite-entry'
 
 import guestList from 'data/guests.json'
 
-const gap = 3
+import styles from './guest-list.css'
+
 const inviteKeys = [
+  `See invite`,
   `Invite`,
   `Email`,
   `Message`,
   `Song`,
   `Name`,
   `Can come?`,
-  `Food requirements`,
+  `Food`,
   `Allergies`,
 ]
 
@@ -36,38 +39,33 @@ export const GuestList = () => {
   if (databaseInvites) {
     return (
       <Container container={`xl`}>
-        <Text>
-          <Box
-            backgroundColor={`lightgrey`}
-            padding={{
-              vertical: 3,
-            }}
-          >
-            <Text
-              lineHeight={1}
-              textAlign={`center`}
-            >
-              <Grid
-                columns={inviteKeys.length}
-                gap={gap}
-              >
-                {inviteKeys.map(key => (
-                  <div key={key}>
+        <Text className={styles.table}>
+          <Box className={styles.header}>
+            <Grid columns={inviteKeys.length}>
+              {inviteKeys.map(key => (
+                <Box
+                  key={key}
+                  padding={4}
+                >
+                  <Text lineHeight={1}>
                     {key}
-                  </div>
-                ))}
-              </Grid>
-            </Text>
+                  </Text>
+                </Box>
+              ))}
+            </Grid>
           </Box>
-          {formattedData().map(entry => {
-            return (
-              <Invite
-                generateEntry={generateEntry}
-                invite={entry}
-                key={entry.id}
-              />
-            )
-          })}
+          <Box className={styles.entries}>
+            {formattedData().map(entry => {
+              return (
+                <InviteEntry
+                  generateEntry={generateEntry}
+                  invite={entry}
+                  inviteKeys={inviteKeys}
+                  key={entry.id}
+                />
+              )
+            })}
+          </Box>
         </Text>
       </Container>
     )
@@ -86,6 +84,7 @@ export const GuestList = () => {
     return Object.entries(guestList).map(([id, email]) => {
       if (databaseInvites[id]) {
         return {
+          id,
           email,
           ...databaseInvites[id],
         }
@@ -107,56 +106,14 @@ export const GuestList = () => {
   }
 }
 
-const Invite = props => {
-  const { id, email, noDatabaseEntry } = props.invite
-
-  return (
-    <Box
-      backgroundColor={`rgb(249 249 249)`}
-      padding={{ vertical: 2 }}
-    >
-      {renderContent()}
-    </Box>
-  )
-
-  function renderContent() {
-    if (noDatabaseEntry) {
-      return (
-        <Grid columns={`1fr 1fr ${inviteKeys.length - 2}fr`}>
-          <div>
-            {id}
-          </div>
-          <div>
-            {email}
-          </div>
-          <div>
-            {`Would you like to generate a database entry?`}
-            <button onClick={() => props.generateEntry(props.invite)}>
-              {`Generate entry`}
-            </button>
-          </div>
-        </Grid>
-      )
-    }
-  }
-}
-
-const Row = () => {
-  return (
-    <Grid>
-      {}
-    </Grid>
-  )
-}
-
 function newEntry(entry) {
   const names = entry.id.split(`-and-`)
 
   return {
-    ...invite,
+    ...models.invite,
     invited: names.map(name => ({
-      ...guest,
-      name,
+      ...models.guest,
+      name: capitalize(name.replace(`-`, ` `)),
     })),
   }
 }
