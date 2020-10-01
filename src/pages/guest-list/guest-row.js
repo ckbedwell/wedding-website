@@ -1,5 +1,7 @@
+import { useModal } from 'utils/useModal'
 import { Grid } from 'components/grid'
 import { Cell } from './cell'
+import { Invite } from 'pages/invite'
 
 export const GuestRow = ({
   i,
@@ -14,25 +16,34 @@ export const GuestRow = ({
     invited,
   } = invite
 
+  const [modal, setOpen] = useModal(
+    <Invite guestData={invite} />
+  )
+
   if (i === 0) {
     return (
-      <Grid
-        columns={inviteKeys.length}
-      >
-        <Cell>
-          {id}
-        </Cell>
-        <Cell>
-          {email}
-        </Cell>
-        <Cell>
-          {personalisedMessage}
-        </Cell>
-        <Cell>
-          {songChoice}
-        </Cell>
-        <GuestData guest={invited[i]} />
-      </Grid>
+      <>
+        <Grid
+          columns={inviteKeys.length}
+        >
+          <Cell title={id}>
+            <button onClick={() => setOpen(true)}>
+              {id}
+            </button>
+          </Cell>
+          <Cell title={email}>
+            {email}
+          </Cell>
+          <Cell title={personalisedMessage}>
+            {personalisedMessage}
+          </Cell>
+          <Cell title={songChoice}>
+            {songChoice}
+          </Cell>
+          <GuestData guest={invited[i]} />
+        </Grid>
+        {modal}
+      </>
     )
   }
 

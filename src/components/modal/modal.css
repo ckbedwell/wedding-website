@@ -1,0 +1,16 @@
+.button {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: white;
+}
+
+.modal {
+  background-color: rgba(0,0,0,0.5);
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 1;
+}

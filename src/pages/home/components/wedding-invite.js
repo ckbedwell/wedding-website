@@ -1,6 +1,7 @@
 import { useSelector } from 'react-redux'
 
 import { capitalize } from 'utils/capitalize'
+import { getNames } from 'utils/getNames'
 import { Box } from 'components/box'
 import { DecorativeBox } from 'components/decorative-box'
 import { Link } from 'components/link'
@@ -19,7 +20,7 @@ export const WeddingInvite = () => {
           family={`secondary`}
           size={12}
         >
-          {`Dear ${getNames()},`}
+          {`Dear ${getNames(guestData)},`}
         </Text>
       </Box>
       <Box marginBottom={6}>
@@ -67,20 +68,4 @@ export const WeddingInvite = () => {
       </Box>
     </DecorativeBox>
   )
-
-  
-  function getNames() {
-    if (guestData) {
-      if (guestData.invited.length === 1) {
-        return guestData.invited[0].name
-      }
-
-      const names = guestData.invited.map(({ name }) => name)
-      const lastPerson = names[names.length - 1]
-
-      return (
-        `${names.slice(0, names.length - 1).join(', ')} and ${lastPerson}`
-      )
-    }
-  }
 }

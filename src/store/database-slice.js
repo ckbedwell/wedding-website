@@ -51,7 +51,7 @@ export function setUp(id) {
   }
 }
 
-function getGuest(id) {
+export function getGuest(id) {
   return function(dispatch, getState) {
     const { database } = getState().database
     const idToUse = id || getKey()
@@ -69,6 +69,7 @@ function getGuest(id) {
             trackVisit(database, docId, data)
           } else {
             window.localStorage.removeItem(storageKey)
+            console.warn(storageKey)
             throw new Error(`No data`)
           }
         })

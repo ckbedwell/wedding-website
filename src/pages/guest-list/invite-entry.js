@@ -1,4 +1,5 @@
 import { Box } from 'components/box'
+import { Button } from 'components/button'
 import { Grid } from 'components/grid'
 import { GuestRow } from './guest-row'
 import { Cell } from './cell'
@@ -21,17 +22,23 @@ export const InviteEntry = ({ invite, inviteKeys, generateEntry }) => {
     if (noDatabaseEntry) {
       return (
         <Grid columns={`1fr 1fr ${inviteKeys.length - 2}fr`}>
-          <Cell>
+          <Cell title={id}>
             {id}
           </Cell>
-          <Cell>
+          <Cell title={email}>
             {email}
           </Cell>
           <Cell>
-            {`Would you like to generate a database entry?`}
-            <button onClick={() => generateEntry(invite)}>
-              {`Generate entry`}
-            </button>
+            <Box
+              alignItems={`center`}
+              direction={`horizontal`}
+              justifyContent={`space-between`}
+            >
+              {`Would you like to generate a database entry?`}
+              <Button onClick={() => generateEntry(invite)}>
+                {`Generate entry`}
+              </Button>
+            </Box>
           </Cell>
         </Grid>
       )

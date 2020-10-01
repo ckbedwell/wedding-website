@@ -8,7 +8,7 @@ import { Textarea } from 'components/textarea'
 
 import styles from './guest-form.css'
 
-const canComeOptions = [
+export const canComeOptions = [
   {
     name: `select`,
   },

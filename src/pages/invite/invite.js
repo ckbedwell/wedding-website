@@ -1,4 +1,10 @@
+import React from 'react'
+import html2canvas from 'html2canvas'
+import classNames from 'classnames'
+
+import { getNames } from 'utils/getNames'
 import { Box } from 'components/box'
+import { Button } from 'components/button'
 import { Container } from 'components/container'
 import { DecorativeBox } from 'components/decorative-box'
 import { Text } from 'components/text'
@@ -9,14 +15,42 @@ import itinerary from 'data/itinerary.json'
 
 // https://rendering.mcp.cimpress.com/v1/vp/preview?instructions_uri=http%3a%2f%2fservices.vistaprint.com%2fsales%2fdocuments%2fpreviewing%2foriondocsignature.aspx%3fdoc_sig%3dsh4298922_KTM%253adh4298922_KTM%253ai15%255e1%253at1%26language_id%3d2%26forcepopulatesampletext%3dtrue&width=1000&category=lp-redirect&merchant_metadata=KTM
 
-export const Invite = () => {
+export const Invite = ({ guestData }) => {
+  const [showOriginal, setShowOriginal] = React.useState(true)
   const ceremony = itinerary.find(event => event.id === `ceremony`)
   const reception = itinerary.find(event => event.id === `reception`)
+  const inviteRef = React.useRef()
+  const holderRef = React.useRef()
+  const names = getNames(guestData)
+
+  React.useLayoutEffect(() => {
+    html2canvas(inviteRef.current).then(canvas => {
+      setShowOriginal(false)
+      holderRef.current.appendChild(canvas)
+    })
+  }, [inviteRef.current])
 
   return (
-    <Box margin={20}>
+    <Box
+      className={classNames({
+        [styles.hide]: showOriginal,
+      })}
+      margin={20}
+    >
       <Container container={`small`}>
-        <div className={styles.border}>
+        <div ref={holderRef} />
+        {renderContent()}
+      </Container>
+    </Box>
+  )
+
+  function renderContent() {
+    if (showOriginal) {
+      return (
+        <div
+          className={styles.border}
+          ref={inviteRef}
+        >
           <DecorativeBox
             backgroundColor={`white`}
             style={{
@@ -33,6 +67,13 @@ export const Invite = () => {
                   width: 350,
                 }}
               >
+                <Box
+                  marginBottom={8}
+                >
+                  <Text size={5}>
+                    {`${names},`}
+                  </Text>
+                </Box>
                 <Text
                   family={`primary`}
                   size={5}
@@ -121,7 +162,29 @@ export const Invite = () => {
             </Box>
           </DecorativeBox>
         </div>
-      </Container>
-    </Box>
-  )
+      )
+    }
+
+    return (
+      <Box
+        direction={`horizontal`}
+        gap={4}
+      >
+        <Button
+          onClick={() => {
+            document.querySelector(`canvas`)
+              .toBlob(blob => navigator.clipboard.write([new window.ClipboardItem({ 'image/png': blob })]))
+          }}
+        >
+          {`Copy`}
+        </Button>
+        <Button
+          target={`_blank`}
+          to={`mailto:${guestData.email}?subject=Chris and Emily are getting married!&body=${window.location.origin}?id=${btoa(guestData.id)}`}
+        >
+          {`Send invite`}
+        </Button>
+      </Box>
+    )
+  }
 }

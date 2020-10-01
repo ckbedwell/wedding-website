@@ -15,7 +15,6 @@ import guestList from 'data/guests.json'
 import styles from './guest-list.css'
 
 const inviteKeys = [
-  `See invite`,
   `Invite`,
   `Email`,
   `Message`,

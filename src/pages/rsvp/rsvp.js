@@ -1,6 +1,6 @@
 import React from 'react'
 import classNames from 'classnames'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { dotProps } from 'utils/dot-props'
 import { Box } from 'components/box'
@@ -8,10 +8,11 @@ import { Text } from 'components/text'
 import { Section } from 'components/section'
 import { Desktop, TabletMobile } from 'components/responsive'
 import { Grid } from 'components/grid'
-import { GuestForm } from './components/guest-form'
+import { canComeOptions, GuestForm } from './components/guest-form'
 import { SubmitButton } from './components/submit-button'
 import { DirectContact } from './components/direct-contact'
-import { GUEST_COLLECTION } from 'store/database-slice'
+import { GuestFormErrors } from './components/guest-form-errors'
+import { getGuest, GUEST_COLLECTION } from 'store/database-slice'
 
 import styles from './rsvp.css'
 
@@ -20,6 +21,7 @@ const UPDATE_VALUE = `UPDATE_VALUE`
 const COULD_NOT_UPDATE = `COULD_NOT_UPDATE`
 
 export const RSVP = () => {
+  const dispatch = useDispatch()
   const database = useSelector(state => state.database.database)
   const guestData = useSelector(state => state.database.guestData)
   const docId = useSelector(state => state.database.docId)
@@ -29,6 +31,7 @@ export const RSVP = () => {
   const [disabled, setDisabled] = React.useState(false)
   const [submitted, setSubmitted] = React.useState()
   const [error, setError] = React.useState(false)
+  const [invalidOptions, setInvalidOptions] = React.useState([])
 
   React.useEffect(() => {
     rsvpDispatch({
@@ -47,9 +50,6 @@ export const RSVP = () => {
             backgroundColor: `rgb(255 247 247)`,
           }}
         >
-          {/* <pre>
-            {JSON.stringify(rsvpState, null, 2)}
-          </pre> */}
           {renderContent(rsvpState?.invited?.length)}
         </Section>
       </Desktop>
@@ -99,9 +99,13 @@ export const RSVP = () => {
               gap={4}
               margin={{ top: 10 }}
             >
+              <GuestFormErrors
+                invalidOptions={invalidOptions}
+                rsvpState={rsvpState}
+              />
               <SubmitButton
                 disabled={disabled}
-                onClick={() => handleSubmit()}
+                onClick={handleSubmit}
               />
               {renderResult()}
             </Box>
@@ -182,18 +186,40 @@ export const RSVP = () => {
   }
 
   function handleSubmit() {
-    setDisabled(true)
+    if (checkCanComeOption()) {
+      setDisabled(true)
 
-    database.update(GUEST_COLLECTION, docId, {
-      ...rsvpState,
-      submitted: true,
-      submittedDates: [...(guestData.submittedDates || []), new Date().getTime()],
-    })
-      .then(() => setSubmitted(true))
-      .catch(() => {
-        setError(COULD_NOT_UPDATE)
-        setDisabled(false)
+      database.update(GUEST_COLLECTION, docId, {
+        ...rsvpState,
+        submitted: true,
+        submittedDates: [...(guestData.submittedDates || []), new Date().getTime()],
       })
+        .then(() => {
+          setSubmitted(true)
+          dispatch(getGuest(btoa(docId)))
+        })
+        .catch((e) => {
+          console.error(e)
+          setError(COULD_NOT_UPDATE)
+          setDisabled(false)
+        })
+    }
+  }
+
+  function checkCanComeOption() {
+    const validOptions = canComeOptions.map(({ value }) => value).filter(Boolean)
+
+    const validation = rsvpState.invited.map(guest => {
+      return validOptions.includes(guest.canCome)
+    })
+
+    setInvalidOptions(validation)
+
+    if (validation.every(Boolean)) {
+      return true
+    }
+
+    return false
   }
 }
 
