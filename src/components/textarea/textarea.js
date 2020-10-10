@@ -1,9 +1,12 @@
+import classNames from 'classnames'
+
 import { Box } from 'components/box'
 import { Text } from 'components/text'
 
 import styles from './textarea.css'
 
 export const Textarea = ({
+  className,
   label,
   onChange,
   value,
@@ -19,7 +22,9 @@ export const Textarea = ({
         </label>
       </Box>
       <textarea
-        className={styles.textarea}
+        className={classNames(styles.textarea, {
+          [className]: Boolean(className),
+        })}
         onChange={e => onChange(e.target.value)}
         value={value}
       />

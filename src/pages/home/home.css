@@ -5,7 +5,7 @@
   }
 
   .border {
-    background: black;
+    background: lightgrey;
     height: calc(10rem + 1px);
     left: 50%;
     position: absolute;

@@ -10,7 +10,7 @@
   position: relative;
 }
 
-.imageWrapper:after {
+.filter:after {
   background: rgb(255 206 92 / 20%);
   content: "";
   display: block;

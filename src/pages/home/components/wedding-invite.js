@@ -55,7 +55,7 @@ export const WeddingInvite = () => {
       </Box>
       <Box>
         <Text>
-          {`Please RSVP by some date`}
+          {`Please RSVP by 1st March`}
           <div>
             <Link
               bodyLink

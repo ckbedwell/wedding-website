@@ -1,5 +1,11 @@
 .container {
   transition: text-shadow 0.3s;
+
+  @media(--tablet) {
+    border-bottom: 1px solid lightgrey;
+    display: block;
+    padding: 1rem;
+  }
 }
 
 .active {

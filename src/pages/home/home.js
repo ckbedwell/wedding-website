@@ -5,6 +5,7 @@ import { Image } from 'components/image'
 import { Text } from 'components/text'
 import { WeddingDate } from 'components/wedding-date'
 import { WeddingInvite } from './components/wedding-invite'
+import { CovidNotice } from './components/covid-notice'
 
 import styles from './home.css'
 
@@ -26,6 +27,7 @@ export const Home = () => {
           <div className={styles.card}>
             {renderContent()}
           </div>
+          <CovidNotice />
         </main>
       </Container>
     </Container>

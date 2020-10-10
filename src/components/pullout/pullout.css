@@ -7,7 +7,6 @@
 .container {
   background-color: white;
   border-right: 1px solid black;
-  padding: 2rem;
   height: 100vh;
   position: fixed;
   top: 0;

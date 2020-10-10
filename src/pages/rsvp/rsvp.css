@@ -6,3 +6,20 @@
 .resubmit {
   color: rgba(73, 140, 206, 1);
 }
+
+.messageArea,
+.songArea {
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding: 12px;
+  text-align: center;
+}
+
+.messageArea {
+  height: 100px;
+  width: 500px;
+}
+
+.songArea {
+  width: 400px;
+}

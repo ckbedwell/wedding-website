@@ -1,9 +1,12 @@
+import classNames from 'classnames'
+
 import { Image } from 'components/image'
 import { Text } from 'components/text'
 
 import styles from './polaroid.css'
 
 export const Polaroid = ({
+  filter = true,
   image,
   rotate,
   style = {},
@@ -19,7 +22,11 @@ export const Polaroid = ({
       }}
     >
       <div className={styles.polaroid}>
-        <div className={styles.imageWrapper}>
+        <div
+          className={classNames(styles.imageWrapper, {
+            [styles.filter]: filter,
+          })}
+        >
           <Image
             ratio={ratio}
             src={src}

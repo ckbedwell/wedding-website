@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { dotProps } from 'utils/dot-props'
 import { Box } from 'components/box'
 import { Text } from 'components/text'
+import { Textarea } from 'components/textarea'
 import { Section } from 'components/section'
 import { Desktop, TabletMobile } from 'components/responsive'
 import { Grid } from 'components/grid'
@@ -75,39 +76,81 @@ export const RSVP = () => {
               [styles.disabled]: disabled,
             })}
           >
-            <Grid
-              columns={columns}
-              gap={5}
-            >
-              {rsvpState.invited.map((invitedGuest, idx) => {
-                return (
-                  <div key={invitedGuest.name}>
-                    <GuestForm
-                      guestData={invitedGuest}
-                      idx={idx}
-                  
-                      onChange={handleChange}
-                      single={rsvpState.invited.length === 1}
-                    />
-                  </div>
-                )
-              })}
-            </Grid>
             <Box
-              center
               direction={`vertical`}
-              gap={4}
-              margin={{ top: 10 }}
+              gap={8}
             >
-              <GuestFormErrors
-                invalidOptions={invalidOptions}
-                rsvpState={rsvpState}
-              />
-              <SubmitButton
-                disabled={disabled}
-                onClick={handleSubmit}
-              />
-              {renderResult()}
+              <Grid
+                columns={columns}
+                gap={5}
+              >
+                {rsvpState.invited.map((invitedGuest, idx) => {
+                  return (
+                    <div key={invitedGuest.name}>
+                      <GuestForm
+                        guestData={invitedGuest}
+                        idx={idx}
+                  
+                        onChange={handleChange}
+                        single={rsvpState.invited.length === 1}
+                      />
+                    </div>
+                  )
+                })}
+              </Grid>
+              <Box
+                alignItems={`center`}
+                direction={`vertical`}
+                gap={8}
+              >
+                <div>
+                  <Text textAlign={`center`}>
+                    {`Would you like to add a message?`}
+                  </Text>
+                  <Textarea
+                    className={styles.messageArea}
+                    onChange={e => rsvpDispatch({
+                      type: UPDATE_VALUE,
+                      payload: {
+                        name: `personalisedMessage`,
+                        content: e,
+                      },
+                    })}
+                    value={rsvpState.personalisedMessage}
+                  />
+                </div>
+                <div>
+                  <Text textAlign={`center`}>
+                    {`Which song will get you on the dance floor?`}
+                  </Text>
+                  <Textarea
+                    className={styles.songArea}
+                    onChange={e => rsvpDispatch({
+                      type: UPDATE_VALUE,
+                      payload: {
+                        name: `songChoice`,
+                        content: e,
+                      },
+                    })}
+                    value={rsvpState.songChoice}
+                  />
+                </div>
+              </Box>
+              <Box
+                center
+                direction={`vertical`}
+                gap={4}
+              >
+                <GuestFormErrors
+                  invalidOptions={invalidOptions}
+                  rsvpState={rsvpState}
+                />
+                <SubmitButton
+                  disabled={disabled}
+                  onClick={handleSubmit}
+                />
+                {renderResult()}
+              </Box>
             </Box>
           </div>
         </>

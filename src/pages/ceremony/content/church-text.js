@@ -19,7 +19,7 @@ export const ChurchText = () => {
       </Text>
       <Box marginBottom={4}>
         <Text>
-          {`We'll be getting married at St Andrews Church in Newcastle-under-Lyme. The ceremony starts at ${data.start}. There is plenty of parking at the church and it is 25 minutes away from the `}
+          {`We will be getting married at St Andrews Church in Newcastle-under-Lyme. The ceremony starts at ${data.start}. There is plenty of parking at the church and it is 25 minutes away from the `}
           <Link
             bodyLink
             to={`/reception`}
