@@ -56,11 +56,13 @@ export const GuestList = () => {
         return {
           id,
           email,
+          sent: false,
           ...databaseInvites[id],
         }
       }
 
       return {
+        sent: false,
         id,
         email,
         noDatabaseEntry: true,
@@ -83,6 +85,7 @@ function newEntry(entry) {
     ...models.invite,
     invited: names.map(name => ({
       ...models.guest,
+      sent: false,
       name: capitalize(name.replace(`-`, ` `)),
     })),
   }

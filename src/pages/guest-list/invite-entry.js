@@ -21,7 +21,10 @@ export const InviteEntry = ({ invite, inviteKeys, generateEntry }) => {
   function renderContent() {
     if (noDatabaseEntry) {
       return (
-        <Grid columns={`1fr 1fr ${inviteKeys.length - 2}fr`}>
+        <Grid columns={`1fr 1fr 1fr ${inviteKeys.length - 3}fr`}>
+          <Cell>
+            {`false`}
+          </Cell>
           <Cell title={id}>
             {id}
           </Cell>

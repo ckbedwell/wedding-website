@@ -182,7 +182,7 @@ export const Invite = ({ guestData }) => {
         </Button>
         <Button
           target={`_blank`}
-          to={`mailto:${guestData.email}?subject=Chris and Emily are getting married!&body=${DOMAIN}?id=${btoa(guestData.id)}%0D%0A%0D%0AThis link is unique to you, so you easily RSVP on our website, if you share it with anybody else they will be to rsvp on your behalf!`}
+          to={`mailto:${guestData.email}?subject=Chris and Emily are getting married!&body=${DOMAIN}?id=${btoa(guestData.id)}%0D%0A%0D%0AThis link is unique to you so you can easily RSVP on our website, if you share it with anybody else they will be to rsvp on your behalf.`}
         >
           {`Send invite`}
         </Button>

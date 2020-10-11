@@ -6,6 +6,7 @@ import { InviteEntry } from './invite-entry'
 import styles from './guest-list.css'
 
 const inviteKeys = [
+  `Invite sent?`,
   `Invite`,
   `Email`,
   `Message`,
