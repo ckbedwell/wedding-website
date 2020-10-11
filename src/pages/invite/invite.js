@@ -15,6 +15,8 @@ import itinerary from 'data/itinerary.json'
 
 // https://rendering.mcp.cimpress.com/v1/vp/preview?instructions_uri=http%3a%2f%2fservices.vistaprint.com%2fsales%2fdocuments%2fpreviewing%2foriondocsignature.aspx%3fdoc_sig%3dsh4298922_KTM%253adh4298922_KTM%253ai15%255e1%253at1%26language_id%3d2%26forcepopulatesampletext%3dtrue&width=1000&category=lp-redirect&merchant_metadata=KTM
 
+const DOMAIN = `https://wedding.ckbedwell.com`
+
 export const Invite = ({ guestData }) => {
   const [showOriginal, setShowOriginal] = React.useState(true)
   const ceremony = itinerary.find(event => event.id === `ceremony`)
@@ -180,7 +182,7 @@ export const Invite = ({ guestData }) => {
         </Button>
         <Button
           target={`_blank`}
-          to={`mailto:${guestData.email}?subject=Chris and Emily are getting married!&body=${window.location.origin}?id=${btoa(guestData.id)}`}
+          to={`mailto:${guestData.email}?subject=Chris and Emily are getting married!&body=${DOMAIN}?id=${btoa(guestData.id)}%0D%0A%0D%0AThis link is unique to you, so you easily RSVP on our website, if you share it with anybody else they will be to rsvp on your behalf!`}
         >
           {`Send invite`}
         </Button>

@@ -1,3 +1,11 @@
+.card {
+  background-color: white;
+  color: black;
+  position: relative;
+  z-index: 1;
+  margin: 3rem 0;
+}
+
 @media(--aboveTablet) {
   .main {
     position: relative;
@@ -14,12 +22,9 @@
     width: calc(100% + 2px);
     z-index: 0;
   }
-}
 
-.card {
-  background-color: white;
-  color: black;
-  padding: 3rem;
-  position: relative;
-  z-index: 1;
+  .card {
+    padding: 3rem;
+    margin: 0;
+  }
 }

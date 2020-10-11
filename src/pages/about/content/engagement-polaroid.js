@@ -12,6 +12,7 @@ export const EngagementPolaroid = ({ width }) => {
       style={{
         width,
       }}
+      text={`Chris proposed whilst we were on holiday in Spain, looking up at the Puente Nuevo`}
     />
   )
 }

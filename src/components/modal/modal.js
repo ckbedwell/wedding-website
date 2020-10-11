@@ -15,7 +15,9 @@ export const Modal = ({ children, close }) => {
       >
         <Svg icon={`cross`} />
       </button>
-      {children}
+      <div className={styles.container}>
+        {children}
+      </div>
     </Box>
   )
 }

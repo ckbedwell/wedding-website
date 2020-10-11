@@ -13,6 +13,7 @@
   border-radius: 5px;
   padding: 12px;
   text-align: center;
+  max-width: 80vw;
 }
 
 .messageArea {

@@ -6,17 +6,27 @@ export function useModal(children) {
   const [open, setOpen] = React.useState(false)
   const modal = getContent()
 
-  return [modal, setOpen]
+  return [modal, handleClick]
 
   function getContent() {
     if (open) {
       return (
-        <Modal close={() => setOpen(false)}>
+        <Modal close={() => handleClick(false)}>
           {children}
         </Modal>
       )
     }
 
     return null
+  }
+
+  function handleClick(beOpen) {
+    setOpen(beOpen)
+
+    if (beOpen) {
+      document.querySelector(`html`).style.overflow = `hidden`
+    } else {
+      document.querySelector(`html`).style.overflow = `auto`
+    }
   }
 }

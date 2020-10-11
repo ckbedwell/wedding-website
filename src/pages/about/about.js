@@ -13,7 +13,7 @@ export const About = () => {
       <Desktop>
         <Section
           style={{
-            backgroundColor: `rgb(255 245 239)`,
+            backgroundColor: `rgb(250 255 232)`,
           }}
         >
           <Box
@@ -29,7 +29,7 @@ export const About = () => {
       <TabletMobile>
         <Section
           style={{
-            backgroundColor: `rgb(255 245 239)`,
+            backgroundColor: `rgb(250 255 232)`,
           }}
         >
           <Box
