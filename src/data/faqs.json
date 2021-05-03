@@ -1,0 +1,22 @@
+[
+  {
+    "question": "Checking in between the church and reception",
+    "answer": [
+      "The reception is 10 miles from the church (just under a 25-minute drive), so we've left enough time for guests to check-in to their accommodation after the ceremony.",
+      "The ceremony starts at {{ceremonyStart}}, and the reception starts at {{receptionStart}}."
+    ]
+  },
+  {
+    "question": "Taxis",
+    "answer": [
+      "We advise pre-booking taxis when you will need them, especially after the reception, as we've been told getting a taxi after 11pm can be very difficult.",
+      "<strong>A Star Taxis</strong> - 01260 280280",
+      "<strong>AP Travel Taxis</strong> - 01260 221275"
+    ]
+  },
+  {
+    "question": "Children",
+    "answer": ["In order to meet guest number restrictions, we are only able to extend our invitation to our niece and nephews and we cannot accommodate any other children or babies.",
+    "We hope that you understand this decision and that you will still be able to join us on our special day."]
+  }
+]

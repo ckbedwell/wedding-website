@@ -48,6 +48,7 @@ export const AccommodationVenue = props => {
 }
 
 const LocationContent = ({
+  bookingInfo,
   description,
   distanceFromChurch,
   distanceFromReception,
@@ -87,7 +88,6 @@ const LocationContent = ({
         }}
         direction={`horizontal`}
         gap={2}
-        marginBottom={3}
         padding={{
           bottom: 4,
         }}
@@ -104,10 +104,47 @@ const LocationContent = ({
           {telephone}
         </Text>
       </Box>
-      <Box marginBottom={10}>
-        <Text>
-          {description}
+      <Box
+        alignItems={`center`}
+        borders={{
+          sides: [`bottom`],
+          size: `1px`,
+          color: `lightgrey`,
+        }}
+        direction={`horizontal`}
+        gap={2}
+        marginBottom={3}
+        padding={{
+          vertical: 4,
+        }}
+      >
+        <Svg
+          icon={`email`}
+          size={[`1.5em`]}
+        />
+        <Text
+          lineHeight={1}
+          size={4}
+        >
+          <div
+            dangerouslySetInnerHTML={{
+              __html: bookingInfo,
+            }}
+          />
         </Text>
+      </Box>
+      <Box marginBottom={10}>
+        {description.map((text, i) => {
+          return (
+            <Box
+              key={i}
+              marginBottom={3}
+            >
+              <Text >
+                {text}
+              </Text>
+            </Box>
+          )})}
       </Box>
       <Location location={location} />
     </div>
