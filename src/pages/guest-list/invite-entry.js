@@ -4,7 +4,12 @@ import { Grid } from 'components/grid'
 import { GuestRow } from './guest-row'
 import { Cell } from './cell'
 
-export const InviteEntry = ({ invite, inviteKeys, generateEntry }) => {
+export const InviteEntry = ({
+  invite,
+  inviteKeys,
+  inviteType,
+  generateEntry,
+}) => {
   const {
     id,
     email,
@@ -54,6 +59,7 @@ export const InviteEntry = ({ invite, inviteKeys, generateEntry }) => {
             i={i}
             invite={invite}
             inviteKeys={inviteKeys}
+            inviteType={inviteType}
             key={guest.name}
           />
         ))}

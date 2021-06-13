@@ -7,12 +7,14 @@ import { Grid } from 'components/grid'
 import { Box } from 'components/box'
 import { Cell } from './cell'
 import { Invite } from 'pages/invite'
+import { EveningInvite } from 'pages/evening-invite'
 import { Text } from 'components/text'
 
 export const GuestRow = ({
   i,
   invite,
   inviteKeys,
+  inviteType = `day`,
 }) => {
   const {
     id,
@@ -23,8 +25,15 @@ export const GuestRow = ({
     invited,
   } = invite
 
+  const inviteMap = {
+    day: Invite,
+    evening: EveningInvite,
+  }
+
+  const InviteComponent = inviteMap[inviteType]
+
   const [modal, setOpen] = useModal(
-    <Invite guestData={invite} />
+    <InviteComponent guestData={invite} />
   )
 
   if (i === 0) {

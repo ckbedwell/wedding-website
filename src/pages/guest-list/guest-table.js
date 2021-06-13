@@ -17,7 +17,11 @@ const inviteKeys = [
   `Allergies`,
 ]
 
-export const GuestTable = ({ data, generateEntry }) => {
+export const GuestTable = ({
+  data,
+  generateEntry,
+  inviteType,
+}) => {
   return (
     <Text className={styles.table}>
       <Box className={styles.header}>
@@ -41,6 +45,7 @@ export const GuestTable = ({ data, generateEntry }) => {
               generateEntry={generateEntry}
               invite={entry}
               inviteKeys={inviteKeys}
+              inviteType={inviteType}
               key={entry.id}
             />
           )

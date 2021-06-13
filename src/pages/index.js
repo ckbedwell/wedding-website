@@ -4,6 +4,7 @@ import { Ceremony } from './ceremony'
 import { Reception } from './reception'
 import { RSVP } from './rsvp'
 import { Faqs } from './faqs'
+import { EveningGuests } from './evening-guests'
 
 export const pageMap = {
   about: About,
@@ -12,4 +13,5 @@ export const pageMap = {
   reception: Reception,
   rsvp: RSVP,
   faqs: Faqs,
+  eveningGuests: EveningGuests,
 }

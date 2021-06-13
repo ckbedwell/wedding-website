@@ -1,0 +1,19 @@
+.hide {
+  opacity: 0;
+}
+
+.border {
+  background-color: rgb(242 242 242);
+  border: 1px solid rgb(236 236 236);
+  padding: 3px;
+}
+
+.divider {
+  height: 3px;
+  width: 200px;
+}
+
+.rsvp {
+  position: relative;
+  top: 70px;
+}
