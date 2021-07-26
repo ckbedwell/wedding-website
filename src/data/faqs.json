@@ -1,9 +1,29 @@
 [
   {
+    "question": "Covid",
+    "answer": [
+      "We are planning to go ahead with full guest numbers. We ask that all guests take a lateral flow test either the day before or the day of the wedding, and we ask that you do not attend if your test is positive.",
+      "We are hopeful that all of our guests will be fully vaccinated by September and both the church and barn are big and well ventilated."
+    ]
+  },
+  {
+    "question": "Masks",
+    "answer": [
+      "We have spoken to our venue and at present they have some rules for wearing a mask when entering the venue. These might change by September and we will clearly communicate this on the day, but please bring a mask just in case they have any rules still in place."
+    ]
+  },
+  {
     "question": "Checking in between the church and reception",
     "answer": [
       "The reception is 10 miles from the church (just under a 25-minute drive), so we've left enough time for guests to check-in to their accommodation after the ceremony.",
       "The ceremony starts at {{ceremonyStart}}, and the reception starts at {{receptionStart}}."
+    ]
+  },
+  {
+    "question": "Parking",
+    "answer": [
+      "Both the church and the reception venue have lots of parking.",
+      "You are able to leave your cars at the reception venue overnight. As most of you will likely be staying in hotels with other guests and friends, we recommend that you car share to the venue, take a taxi home that night and car share on the following day to retrieve your car."
     ]
   },
   {
@@ -18,5 +38,9 @@
     "question": "Children",
     "answer": ["In order to meet guest number restrictions, we are only able to extend our invitation to our niece and nephews and we cannot accommodate any other children or babies.",
     "We hope that you understand this decision and that you will still be able to join us on our special day."]
+  },
+  {
+    "question": "Gifts",
+    "answer": ["Your presence is present enough, but if you would like to buy us a gift, we are always working on projects in our home. A contribution to this would be much appreciated as there is a never ending list of things we would love to do!"]
   }
 ]

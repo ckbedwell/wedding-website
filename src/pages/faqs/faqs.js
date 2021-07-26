@@ -1,12 +1,8 @@
-import { Box } from 'components/box'
 import { Section } from 'components/section'
-import { Desktop, TabletMobile } from 'components/responsive'
  
 import { QuestionAndAnswer } from 'pages/faqs/components'
 
 import data from 'data/faqs.json'
-
-import styles from './faqs.css'
 
 export const Faqs = () => {
   return data.map(({ question, answer }, i) => {
