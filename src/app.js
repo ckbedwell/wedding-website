@@ -11,6 +11,7 @@ import { pageMap } from 'pages'
 import { Invite } from 'pages/invite'
 import { GuestList } from 'pages/guest-list'
 import { EveningGuests } from 'pages/evening-guests'
+import { Emails } from 'pages/emails'
 import { SiteMessage } from 'components/site-message'
 
 import navigation from 'data/navigation.json'
@@ -59,6 +60,10 @@ export const WithHeader = () => {
             component={EveningGuests}
             exact
             path={`/evening-guests`}
+          />
+          <Route
+            component={Emails}
+            path={`/emails`}
           />
           <Route
             component={Home}
